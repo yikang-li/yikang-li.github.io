@@ -6,7 +6,7 @@ description:
 
 profile:
   align: right
-  image: contacts/liyikang_portrait.jpg
+  image: liyikang_portrait.jpg
   address: 
 
 news: true  # includes a list of news items
@@ -17,11 +17,11 @@ social: true  # includes social icons at the bottom of the page
 Research Scientist, Shanghai AI Laboratory & Deputy Director of R&D, Sensetime Technology Ltd.<br>
 Room 3719, Level 37, 701 Yunjin Road, Xuhui District, Shanghai, China<br>
 liyikang [at] pjlab.org.cn, liyikang [at] senseauto.com<br>
-[Google scholar](https://scholar.google.co.uk/citations?user=G9b6hpYAAAAJ) | [Github](https://github.com/yikang-li) || [Weibo](http://weibo.com/liyikang1129) | [Wechat](assets/img/liyikang_wechat.jpeg) | [LinkedIn](https://www.linkedin.com/in/yikang-li) || [Resume](assets/file/resume.pdf)  | [中文简历](assets/file/resume-zh_CN.pdf)
+[Google scholar](https://scholar.google.co.uk/citations?user=G9b6hpYAAAAJ) | [Github](https://github.com/yikang-li) || [Weibo](http://weibo.com/liyikang1129) | [Wechat](assets/img/liyikang_wechat.jpeg) | [LinkedIn](https://www.linkedin.com/in/yikang-li) || [Resume](assets/files/resume.pdf)  | [中文简历](assets/files/resume-zh_CN.pdf)
 
 I'm currently a research scientist at [Shanghai AI Laboratory](http://www.shlab.org.cn/) and Deputy Director of R&D at [Sensetime Technology Ltd.](http://www.sensetime.com/). I obtained my Ph.D. from The Chinese University of Hong Kong in May, 2020 supervised by Prof. [Xiaogang Wang](http://www.ee.cuhk.edu.hk/~xgwang/) and Prof. [Xiaoou Tang](https://www.ie.cuhk.edu.hk/people/xotang.shtml). I got my bachelor's degrees of Electronic Engineering and Economics in Tsinghua University in 2016. I worked as an research intern at Microsoft Research Asia (MSRA) and Facebook Reality Labs (FRL) during my Ph.D. years. 
 
-Research interest: 3D Scene Reconstruction, 3D Scene Perception, Behavior & Scene Simulation, and, any Autonomous-Driving-related topics. *Never stop looking for highly self-motivated students for internship or collaboration.*
+Research interest: 3D Scene Reconstruction, 3D Scene Perception, Behavior & Scene Simulation, and, any Autonomous-Driving-related topics. **Never stop looking for highly self-motivated students for internship, collaboration and Ph.D. Program.**
 
 <!-- ### Highlights
 
