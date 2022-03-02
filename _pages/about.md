@@ -6,22 +6,32 @@ description:
 
 profile:
   align: right
-  image: me2.png
+  image: contacts/liyikang_portrait.jpg
   address: 
 
 news: true  # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
-social: false  # includes social icons at the bottom of the page
+social: true  # includes social icons at the bottom of the page
 ---
 
-Researcher, Microsoft Research Asia<br>
-Building 2, No. 5 Danling Street, Haidian District, Beijing, China<br>
-jindongwang [at] outlook.com, jindong.wang [at] microsoft.com<br>
-[Google scholar](https://scholar.google.com/citations?user=hBZ_tKsAAAAJ) | [Github](https://github.com/jindongwang) | [DBLP](https://dblp.org/pid/19/2969-1.html) || [Zhihu](https://www.zhihu.com/people/jindongwang) | [Weibo](http://www.weibo.com/wjdbr) | [Wechat](http://jd92.wang/assets/image/wechat_public_account.jpg) | [Bilibili](https://space.bilibili.com/477087194) || [Resume](http://jd92.wang/assets/files/../../../../../assets/files/cv_jindongwang_cn-eng.pdf)
+Research Scientist, Shanghai AI Laboratory & Deputy Director of R&D, Sensetime Technology Ltd.<br>
+Room 3719, Level 37, 701 Yunjin Road, Xuhui District, Shanghai, China<br>
+liyikang [at] pjlab.org.cn, liyikang [at] senseauto.com<br>
+[Google scholar](https://scholar.google.co.uk/citations?user=G9b6hpYAAAAJ) | [Github](https://github.com/yikang-li) || [Weibo](http://weibo.com/liyikang1129) | [Wechat](assets/img/liyikang_wechat.jpeg) | [LinkedIn](https://www.linkedin.com/in/yikang-li) || [Resume](assets/file/resume.pdf)  | [中文简历](assets/file/resume-zh_CN.pdf)
 
-I'm currently a researcher at [Microsoft Research Asia (MSRA)](http://www.msra.cn/). Before joining MSRA, I obtained my Ph.D. from Institute of Computing Technology, Chinese Academy of Sciences in June, 2019. My doctoral thesis was awarded the excellent Ph.D. thesis of Chinese Academy of Sciences. In 2018/04--2018/08, I was a visitor of Prof. [Qiang Yang](https://cse.hkust.edu.hk/~qyang/)'s group at Hong Kong University of Science and Technology (HKUST). My work on transfer learning has won the best paper awards in ICCSE 2018 and FTL-IJCAI 2019. In 2021, I published the textbook [迁移学习导论](http://jd92.wang/tlbook), a hands-on introduction to transfer learning. 
 
-Research interest: transfer learning, out-of-distribution / domain generalization, semi-supervised learning, federated learning, and related applications such as activity recognition and computer vision. *Never stop looking for highly self-motivated students for internship or collaboration.*
+LI Yikang is a final-year Ph.D. candidate in Multi-Media Lab (MMLab), The Chinese University of Hong Kong, supervised by Prof. [Xiaogang Wang](http://www.ee.cuhk.edu.hk/~xgwang/) and Prof. [Xiaoou Tang](https://www.ie.cuhk.edu.hk/people/xotang.shtml). He got his bachelor's degrees of Electronic Engineering and Economics in Tsinghua University in 2016. His research interests include but not limit to Computer Vision, Deep Learning, Natureal Language Processing, and Robotics.
+
+**Yikang has started working as a senior research manager since Early 2019 in Mobile Intelligence Group (MIG) of Sensetime.**
+Before that, he has worked with [Lu Yuan](http://www.lyuan.org/) (2014~2015) and [Nan Duan](https://www.microsoft.com/en-us/research/people/nanduan/) (2017) at Microsoft Research Asia (MSRA), and [Chris Twigg](http://chris.twi.gg/) (2018) at Facebook Reality Labs (FRL). He also has a close research collaboration with [Bolei Zhou](http://people.csail.mit.edu/bzhou/), [Jianping Shi](http://shijianping.me/) and [Xiao Chu](http://www.ee.cuhk.edu.hk/~xchu/).
+
+Yikang is an energetic and passinate researcher who loves travelling and photography. He is also a Marathon runner. Please feel free to contact him if you have any similar interests.
+
+Detailed RESUME ([Engilish version](pdf/resume.pdf) and [Chinese version](pdf/resume-zh_CN.pdf)) is attached.
+
+I'm currently a research scientist at [Shanghai AI Laboratory](http://www.shlab.org.cn/) and Deputy Director of R&D at [Sensetime Technology Ltd.](http://www.sensetime.com/). I obtained my Ph.D. from The Chinese University of Hong Kong in May, 2020 supervised by Prof. [Xiaogang Wang](http://www.ee.cuhk.edu.hk/~xgwang/) and Prof. [Xiaoou Tang](https://www.ie.cuhk.edu.hk/people/xotang.shtml). I got my bachelor's degrees of Electronic Engineering and Economics in Tsinghua University in 2016. I worked as an research intern at Microsoft Research Asia (MSRA) and Facebook Reality Labs (FRL) during my Ph.D. years. 
+
+Research interest: 3D Scene Reconstruction, 3D Scene Perception, Behavior & Scene Simulation, and, any Autonomous-Driving-related topics. *Never stop looking for highly self-motivated students for internship or collaboration.*
 
 <!-- ### Highlights
 
