@@ -5,61 +5,44 @@ permalink: /others/
 nav: true
 ---
 
-#### Academic service
+#### Academic Service
 
-- Organizer: IJCAI 2019 Publicity co-chair, ICDM 2019 session chair.
-- Conference PC member: ICML 2022, ICLR 2022, CVPR 2022, WWW 2022, SDM 2022, IJCAI 2022, AAAI 2022, NeurIPS 2021, ICML 2021, ICLR 2021, KDD 2021, UbiComp 2021, ICCV 2021, CVPR 2021, WWW 2021, AAAI 2021, NeurIPS 2020, ICML 2020, AAAI 2020, UbiComp 2020, IEEE VAST 2020, CHI 2019, Ubicomp 2019.
-- Journal reviewer: TPAMI, AI Journal, TKDE, TMM, TMC, ACM CSUR, ACM TIST, IEEE TBD, Knowledge-Based Systems, Neurocomputing, Pervasive and Mobile Computing.
-- Membership: member of CCF technical committee pervasive computing (TCPC) and human computer interaction (TCHCI), CCF member.
+- Conference PC member: ICML 2021/2022, ICLR 2021/2022, CVPR 2019\~2022, AAAI 2019\~2022, NeurIPS 2020/2021, ICML 2021/2022.
+- Journal reviewer: TPAMI, IJCV, TIP, R-AL.
+
+#### Industry Service
+
+- Editorial Board Member, ***White Paper for Technique Innovations in Autonomous Industry (2021),《自动驾驶产业发展白皮书（2021）》***.
+- Group Standard Editor, ***General Technique Requirements for Autonomous Minibus, 《自动驾驶小型客车总体技术要求》***.
+- Committee Member, Shanghai‘s Intelligent & Connected Vehicle and its Application Standardization Committee (上海市智能网联汽车及应用标准化委员会).
+- Committee Member, Shaanxi's Intelligent & Connected Vehicle Standardization Committee (陕西省智能网联汽车团体标准委员会).
+- Review Panelist, Shanghai‘s ICV Road Testing Review Committee (上海市智能网联汽车道路测试评委会).
 
 #### Awards
 
-- Distinguished doctoral thesis award (中国科学院优秀博士学位论文奖) 2020.
-- Best Application Paper Award. IJCAI-19 Federated Machine Learning Workshop 2019.
-- Outstanding Scholarship of CAS president (中科院院长优秀奖) 2019.
-- Special scholarship of ICT (中科院计算所所长特别奖) 2019.
-- Student Scholarship. AAAI Conference on Artificial Intelligence (AAAI) 2019.
-- Student Travel Grant. ACM International Conference on Multimedia (ACMMM) 2018.
-- Outstanding Reviewer. Neurocomputing. 2018.
-- Best Paper. The 3rd International Conference on Crowd Science and Engineering (ICCSE) 2018.
-- Student Travel Award. International Conference on Machine Learning (ICML) 2018.
-- Student Scholarship. AAAI conference on Artificial Intelligence (AAAI) 2018.
-- National Scholarship for PhD students, Ministry of Education 2017.
-- Merit Student, UCAS 2017.
-- Second prize of Bewinner Innovation scholarship. 2017.
-- Excellent Graduate, NCUT 2014.
-- Excellent Bachelor's Graduation Thesis, NCUT 2014.
-- Beijing Merit Student, Beijing City 2013.
-- National Scholarship (3x), Ministry of Education 2012, 2013, 2014.
+- Outstanding Employee, Sensetime Group Ltd., 2020.
+- Overseas High-caliber Personnel, Shenzhen City, 2020.
+- Microsoft Research Asia PhD Fellowship, 2019.
+- Outstanding Student Award (Team Award), The Chinese University of Hong Kong, 2018.
+- Hong Kong PhD Fellowship, 2016.
+- Outstanding Final-Year Project, Tsinghua University, 2016.
+- National Scholarship, Tsinghua, 2014. 
+- National Excellent Undergraduate Exchange Scheme, CSC, 2013. 
 
-#### Talks
 
-- Invited talk: **Recent advance in transfer learning**, at Jiqizhixin. Jun. 2021.
-                    [[PDF](http://jd92.wang/assets/files/l15_jiqizhixin.pdf)]  [[Video](https://www.bilibili.com/video/BV1N5411T7Sb)]
-- Invited course: **Transfer learning**, at Tsinghua University. Dec. 2019. (THU's
-                    advanced machine learning course for EE graduates) [[Class photo](http://jd92.wang/image/img_thu.png)]
-- Invited talk: **Transfer learning: challenges and methods**, at Shandong University, Jinan, China. Oct. 2018.
-- Invited talk: **Transfer learning methods**, at Shenzhen University & Harbin
-                    Institute of Technology. Jun. 2018. [[PDF](http://jd92.wang/assets/files/l14_hit.pdf)] [[Video](http://cs.hrbust.edu.cn/site/newslistread.asp?lid=201862915500727130483)]
-- Invited talk: **Domain adaptation in transfer learning**, at Extreme Vision, online. Dec. 14, 2017. [[PDF](http://jd92.wang/assets/files/l12_da.pdf)]  [[Video](http://mp.weixin.qq.com/s?__biz=MzI5MDUyMDIxNA==&mid=2247484940&idx=2&sn=35e64e07fde9a96afbb65dbf40a945eb&chksm=ec1febf5db6862e38d5e02ff3278c61b376932a46c5628c7d9cb1769c572bfd31819c13dd468&mpshare=1&scene=1&srcid=1219JpTNZFiNDCHsTUrUxwqy#rd)]
-- Invited course: **Transfer learning**, at Leiphone, online. Nov. 4, 2017.
-- Invited course: **On machine learning**, at AI Salon at Shanghai Jiao Tong University, Shanghai, China. Sep. 16, 2017. [[PDF](http://jd92.wang/assets/files/l10_mlsjtu.pdf)] [[Photo](http://jd92.wang/assets/image/20170916.jpg)]
-- Invited course: **Feature engineering in machine learning**, at Zhihu Live, online. Mar. 19, 2017. [[PDF]](http://jd92.wang/assets/files/l07_zhihu_fe.pdf) [[Visit Live](https://www.zhihu.com/lives/819543866939174912)] <img src="/assets/img/zhihu_live.png" width="60" height="18" />
-- Invited course: **Machine learning starter**, at Zhihu Live, online. Dec. 22. [[PDF](http://jd92.wang/assets/files/l06_zhihu_ml.pdf)] [[Visit Live](https://www.zhihu.com/lives/792423196996546560?utm_campaign=zhihulive&utm_source=zhihucolumn&utm_medium=Livecolumn)] <img src="/assets/img/zhihu_live.png" width="60" height="18" />
+#### Team Members
 
-#### Students
+- 2019.06 -- present, [Tao MA](https://scholar.google.com/citations?hl=zh-CN&user=9h86v8kAAAAJ), 3D Scene Perception.
+- 2019.12 -- present, Guohang YAN, Multi-sensor Calibrations. 
+- 2020.07 -- present, Siyuan HUANG, Data-driven Pipeline for Autonomous Driving. 
+- 2020.12 -- present, Dayu YUE, Simulation Engine Development for Autonomous Driving. 
+- 2021.03 -- present, [Botian SHI](https://scholar.google.com/citations?user=K0PpvLkAAAAJ&hl=en), 3D Scene Perception.
+- 2021.06 -- present, [Xuan ZHAO](https://scholar.google.com/citations?user=iYt_BJgAAAAJ&hl=en), Behavior & Traffic Simulation for Autonomous Driving. 
+- 2021.08 -- present, [Yuenan HOU](https://cardwing.github.io/), 3D Scene Perception for Autonomous Driving.
+- 2021.08 -- present, [Pinlong CAI](https://www.researchgate.net/profile/Pinlong-Cai), Behavior & Traffic Simulation for Autonomous Driving. 
+- 2021.08 -- present, [Jianfei GUP](https://ventusff.github.io/), 3D Scene Reconstruction. 
+- 2021.11 -- present, [Xing GAO](https://scholar.google.com/citations?user=6rjfzQUAAAAJ&hl=zh-CN), Graph Convolution and its Applications in Autonomous Driving. 
+- 2022.01 -- present, [Jiantao QIU](https://scholar.google.com/citations?user=Vm8bStkAAAAJ&hl=en), Dynamics & Behavior Simulation for Autonomous Driving.
+* (Sensetime Employees are shielded according to the company regulation.) *
 
-##### Interns at MSRA
 
-- 2021.11 -- present, Yidong Wang, Master @ Tokyo Institute of Technology.
-- 2021.06 -- 2021.11, Wang Lu, Ph.D @ ICT, Chinese Academy of Sciences. Now: continue his Ph.D in ICT.
-- 2020.12 -- 2021.05, [Wenxin Hou](https://houwx.net), Master @ Tokyo Institute of Technology. Now: SDE at Microsoft.
-- 2020.10 -- 2020.11, Danni Li, Bachelor @ City University of Hong Kong. Now: Amazon.
-- 2020.05 -- 2020.09, Yuntao Du, Ph.D @ Nanjing University. Now: continue his Ph.D in NJU.
-- 2019.10 -- 2020.01, Weixin Lu, Bachelor @ Peking University. Now: Master @ New York University.
-
-##### Collaborating students
-
-- Ph.D students at ICT, CAS: Xin Qin, Wang Lu, Yuxin Zhang, Xiaohai Li.
-- Ph.D student at Institute of Acoustics, CAS: Han Zhu.
-- Master students at Tokyo Tech: Bowen Zhang.
