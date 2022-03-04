@@ -26,6 +26,6 @@ I obtained my Ph.D. from *The Chinese University of Hong Kong* in May, 2020 supe
 
 Research interest: 3D Scene Reconstruction, 3D Scene Perception, Behavior & Scene Simulation, any Autonomous-Driving-related topic. 
 
-<i style="color: #2ecc71"><b>\*\*\*Important\*\*\*&nbsp;</b></i>   Our team is searching for highly self-motivated ***interns / full-time employees / post-docs*** .
+<i style="color: #2ecc6f"><b>\*\*\*Important\*\*\*&nbsp;</b></i>   Our team is searching for highly self-motivated ***interns / full-time employees / post-docs*** . If you are interested in <span style="color: red;">solving the industrial problem in an academic way</span>, do not hesitate to contact me. 
 
 
