@@ -2,7 +2,7 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: blank # the website title (if blank, full name will be used instead)
+title: LI Yikang's Homepage # the website title (if blank, full name will be used instead)
 first_name: Yikang
 middle_name: 
 last_name: LI
@@ -69,7 +69,7 @@ stackoverflow_id: #your stackoverflow id
 rss_icon: false
 
 contact_note: >
-  Please contact me via email first: liyikang@pjlab.org.cn
+  Please contact me via email: liyikang@pjlab.org.cn
 
 google_analytics: G-EFRKRMFEH9 # out your google-analytics code
 panelbear_analytics: XXXXXXXXX # panelbear analytics site ID
@@ -87,7 +87,7 @@ pagination:
   enabled: true
 
 # Comments
-disqus_shortname: al-folio # put your disqus shortname
+disqus_shortname: yikang-li # put your disqus shortname
 # https://help.disqus.com/en/articles/1717111-what-s-a-shortname
 
 # -----------------------------------------------------------------------------
