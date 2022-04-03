@@ -13,7 +13,7 @@ nav: true
 #### Industrial Service
 
 - Editorial Board Member, ***White Paper for Technique Innovations in Autonomous Industry (2021),《自动驾驶产业发展白皮书（2021）》***.
-- Group Standard Editor, ***General Technique Requirements for Autonomous Minibus, 《自动驾驶小型客车总体技术要求》***.
+- Group Standard Editor, ***[General Technique Requirements for Autonomous Minibus, 《自动驾驶小型客车总体技术要求》](http://www.ttbz.org.cn/StandardManage/Detail/59286/)***.
 - Committee Member, Shanghai‘s Intelligent & Connected Vehicle and its Application Standardization Committee (上海市智能网联汽车及应用标准化委员会).
 - Committee Member, Shaanxi's Intelligent & Connected Vehicle Standardization Committee (陕西省智能网联汽车团体标准委员会).
 - Review Panelist, Shanghai‘s ICV Road Testing Review Committee (上海市智能网联汽车道路测试评委会).
