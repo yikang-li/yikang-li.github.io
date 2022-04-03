@@ -4,11 +4,13 @@ permalink: /publications/
 title: Publications
 description: 
 years: [2022, 2021, 2020, 2019, 2018, 2017]
+ignore_years_conf: [2021, 2020]
+ignore_years_preprint: [2018, 2019, 2020]
 nav: true
 ---
 
 [[Conference papers](#conference-papers)] 
-
+[[Preprints](#preprints)] 
 
 
 
@@ -17,8 +19,10 @@ nav: true
 <div class="publications">
 
 {% for y in page.years %}
-  <h2 class="year">{{y}}</h2>
-  {% bibliography -f confs -q @*[year={{y}}]* %}
+  	{% unless page.ignore_years_conf contains y %}
+      <h2 class="year">{{y}}</h2>
+      {% bibliography -f confs -q @*[year={{y}}]* %}
+    {% endunless %}
 {% endfor %}
 
 </div>
@@ -29,8 +33,10 @@ nav: true
 <div class="publications">
 
 {% for y in page.years %}
-  <h2 class="year">{{y}}</h2>
-  {% bibliography -f preprint -q @*[year={{y}}]* %}
+  	{% unless page.ignore_years_preprint contains y %}
+      	<h2 class="year">{{y}}</h2>
+      	{% bibliography -f preprint -q @*[year={{y}}]* %}
+   	{% endunless %}
 {% endfor %}
 
 </div>
