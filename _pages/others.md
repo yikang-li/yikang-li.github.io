@@ -31,7 +31,7 @@ nav: true
 - National Excellent Undergraduate Exchange Scheme, CSC, 2013. 
 
 
-#### Team Members
+<!-- #### Team Members
 
 - 2019.06 -- present, [Tao MA](https://scholar.google.com/citations?hl=zh-CN&user=9h86v8kAAAAJ), 3D Scene Perception.
 - 2019.12 -- present, Guohang YAN, Multi-sensor Calibrations. 
@@ -45,6 +45,6 @@ nav: true
 - 2021.08 -- present, [Jianfei GUP](https://ventusff.github.io/), 3D Scene Reconstruction. 
 - 2021.11 -- present, [Xing GAO](https://scholar.google.com/citations?user=6rjfzQUAAAAJ&hl=zh-CN), Graph Convolution and its Applications in Autonomous Driving. 
 - 2022.01 -- present, [Jiantao QIU](https://scholar.google.com/citations?user=Vm8bStkAAAAJ&hl=en), Dynamics & Behavior Simulation for Autonomous Driving.
-* (Sensetime Employees are shielded according to the company regulation.) *
+* (Sensetime Employees are shielded according to the company regulation.) * -->
 
 
