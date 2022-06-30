@@ -37,13 +37,13 @@
           
           {% if forloop.length == 1 %}
             {% if author_is_self %}
-              {% if entry.corr %}
+              {% if entry.corr == 'true' %}
                 <em><b>{{author.first}} {{author.last}}</b></em><sup>#</sup>
               {% else %}
                 <em><b>{{author.first}} {{author.last}}</b></em>
               {% endif %}
             {% else %}
-              {% if entry.corr %}
+              {% if entry.corr == 'true' %}
                 <em><b>{{author.first}} {{author.last}}</b></em><sup>#</sup>
               {% else %}
                 <em><b>{{author.first}} {{author.last}}</b></em>
@@ -52,7 +52,7 @@
           {% else %}
             {% unless forloop.last %}
               {% if author_is_self %}
-                {% if entry.corr %}
+                {% if entry.corr == 'true' %}
                   <em><b>{{author.first}} {{author.last}}</b></em><sup>#</sup>
                 {% else %}
                   <em><b>{{author.first}} {{author.last}}</b></em>
