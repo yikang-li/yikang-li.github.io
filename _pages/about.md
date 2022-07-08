@@ -14,13 +14,15 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Research Scientist, [Shanghai AI Lab](https://www.shlab.org.cn) & Deputy Director of R&D, [Sensetime Group](https://www.sensetime.com/).<br>
+Research Scientist & PI, [Shanghai AI Lab](https://www.shlab.org.cn).<br>
 Room 3719, Level 37, 701 Yunjin Road, Xuhui District, Shanghai, China<br>
-liyikang [at] pjlab.org.cn, liyikang [at] senseauto.com<br>
+liyikang [at] pjlab.org.cn<br>
 [Google scholar](https://scholar.google.co.uk/citations?user=G9b6hpYAAAAJ) | [Github](https://github.com/yikang-li) || [Weibo](http://weibo.com/liyikang1129) | [Wechat](assets/img/liyikang_wechat.jpeg) | [LinkedIn](https://www.linkedin.com/in/yikang-li) || [Resume](assets/files/resume.pdf)  | [中文简历](assets/files/resume-zh_CN.pdf)
 
-I'm currently a research scientist & PI at [Shanghai AI Laboratory](http://www.shlab.org.cn/) and Deputy Director of R&D at [Sensetime Technology Ltd.](http://www.sensetime.com/). 
-I am leading a research team containg over 20 talented researchers & interns at Shanghai AI Lab, aiming at designing an automated data pipeline to enhance the data-driven Autonomous Driving development. Additionally, I also lead a R&D team containing over 30 talented engineers at Sensetime, developing the RoboX Autonomous Products. 
+I'm currently a research scientist & PI at [Shanghai AI Laboratory](http://www.shlab.org.cn/).
+I am leading a research team containg over 20 talented researchers at Shanghai AI Lab, aiming at innovating to the transportation system in a data-driven way.
+
+Previously, I worked as Deputy Director of R&D at [Sensetime Technology Ltd](http://www.sensetime.com/), leading an R&D team containing over 30 talented engineers, developing the RoboX Autonomous Products, including RoboBus & RoboSweeper. 
 
 I obtained my Ph.D. from *The Chinese University of Hong Kong* in May, 2020 supervised by Prof. [Xiaogang Wang](http://www.ee.cuhk.edu.hk/~xgwang/) and Prof. [Xiaoou Tang](https://www.ie.cuhk.edu.hk/people/xotang.shtml). I got my bachelor's degrees of Electronic Engineering and Economics in *Tsinghua University* in 2016. I worked as an research intern at *Microsoft Research Asia (MSRA)* and *Facebook Reality Labs* *(Now Meta Reality Labs)* during my Ph.D. years. 
 
