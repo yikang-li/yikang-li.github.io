@@ -22,7 +22,7 @@ liyikang [at] pjlab.org.cn<br>
 I'm currently a research scientist & PI at [Shanghai AI Laboratory](http://www.shlab.org.cn/).
 I am leading a research team containg over 20 talented researchers at Shanghai AI Lab, aiming at innovating to the transportation system in a data-driven way.
 
-Previously, I worked as Deputy Director of R&D at [Sensetime Technology Ltd](http://www.sensetime.com/), leading an R&D team containing over 30 talented engineers, developing the RoboX Autonomous Products, including RoboBus & RoboSweeper. 
+Previously, I worked as Deputy Director of R&D at [Sensetime Technology Ltd](http://www.sensetime.com/), leading a product team containing over 30 talented engineers and product specialists, developing the RoboX Autonomous Products, including RoboBus & RoboSweeper. 
 
 I obtained my Ph.D. from *The Chinese University of Hong Kong* in May, 2020 supervised by Prof. [Xiaogang Wang](http://www.ee.cuhk.edu.hk/~xgwang/) and Prof. [Xiaoou Tang](https://www.ie.cuhk.edu.hk/people/xotang.shtml). I got my bachelor's degrees of Electronic Engineering and Economics in *Tsinghua University* in 2016. I worked as an research intern at *Microsoft Research Asia (MSRA)* and *Facebook Reality Labs* *(Now Meta Reality Labs)* during my Ph.D. years. 
 
