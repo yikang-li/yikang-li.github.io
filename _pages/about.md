@@ -17,7 +17,7 @@ social: true  # includes social icons at the bottom of the page
 Research Scientist & PI, [Shanghai AI Lab](https://www.shlab.org.cn).<br>
 Room 3719, Level 37, 701 Yunjin Road, Xuhui District, Shanghai, China<br>
 liyikang [at] pjlab.org.cn<br>
-[Google scholar](https://scholar.google.co.uk/citations?user=G9b6hpYAAAAJ) | [Github](https://github.com/yikang-li) || [Weibo](http://weibo.com/liyikang1129) | [Wechat](assets/img/liyikang_wechat.jpeg) | [LinkedIn](https://www.linkedin.com/in/yikang-li) || [Resume](assets/files/resume.pdf)  | [中文简历](assets/files/resume-zh_CN.pdf)
+[Google scholar](https://scholar.google.co.uk/citations?user=G9b6hpYAAAAJ) | [Github](https://github.com/yikang-li) || [LinkedIn](https://www.linkedin.com/in/yikang-li) || [Resume](assets/files/resume.pdf)  | [中文简历](assets/files/resume-zh_CN.pdf)
 
 I'm currently a research scientist & PI at [Shanghai AI Laboratory](http://www.shlab.org.cn/).
 I am leading a research team containg over 20 talented researchers at Shanghai AI Lab, aiming at innovating to the transportation system in a data-driven way.
