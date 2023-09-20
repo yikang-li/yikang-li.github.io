@@ -40,4 +40,4 @@ ENV JEKYLL_ENV=production
 
 EXPOSE 8080
 
-CMD ["/bin/bash", "-c", "rm -rf .jekyll-cache/ _site/ Gemfile.lock && exec jekyll serve --watch --port=8080 --host=0.0.0.0 --livereload --verbose --trace"]
+CMD ["/bin/bash", "-c", "rm -rf Gemfile.lock && exec jekyll serve --watch --port=8080 --host=0.0.0.0 --livereload --verbose --trace"]

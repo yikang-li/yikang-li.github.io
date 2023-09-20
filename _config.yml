@@ -142,7 +142,7 @@ plugins:
   # - jekyll-diagrams
   # - jekyll-email-protect
   # - jekyll-feed
-   - jekyll-github-metadata
+  # - jekyll-github-metadata
   # - jekyll-paginate-v2
   - jekyll-responsive-image
   - jekyll/scholar
@@ -159,8 +159,8 @@ defaults:
       sitemap:         false
 
 # Extras
-github: [metadata]
-repository: yikang-li/yikang-li.github.io
+# github: [metadata]
+# repository: yikang-li/yikang-li.github.io
 
 # -----------------------------------------------------------------------------
 # Jekyll Archives
