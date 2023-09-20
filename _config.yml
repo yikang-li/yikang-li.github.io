@@ -69,7 +69,7 @@ stackoverflow_id: #your stackoverflow id
 rss_icon: false
 
 contact_note: >
-  Please contact me via email: liyikang@pjlab.org.cn
+  Please contact me via email: allen[dot]li[dot]thu[at]gmail[dot]com
 
 google_analytics: G-EFRKRMFEH9 # out your google-analytics code
 panelbear_analytics: XXXXXXXXX # panelbear analytics site ID
@@ -142,7 +142,7 @@ plugins:
   # - jekyll-diagrams
   # - jekyll-email-protect
   # - jekyll-feed
-  # - jekyll-github-metadata
+   - jekyll-github-metadata
   # - jekyll-paginate-v2
   - jekyll-responsive-image
   - jekyll/scholar
@@ -160,6 +160,7 @@ defaults:
 
 # Extras
 github: [metadata]
+repository: yikang-li/yikang-li.github.io
 
 # -----------------------------------------------------------------------------
 # Jekyll Archives
