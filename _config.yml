@@ -159,7 +159,7 @@ defaults:
       sitemap:         false
 
 # Extras
-# github: [metadata]
+github: [metadata]
 # repository: yikang-li/yikang-li.github.io
 
 # -----------------------------------------------------------------------------
