@@ -42,8 +42,9 @@ jobs:
         echo "DEPLOY_BRANCH=gh-pages" >> $GITHUB_OUTPUT
     - name: Deploy website
       run:  |
-        chmod +x bin/deploy
-        git commit -a -m "Committing changes to bin/deploy" || true
+        chmod +x bin/deploy bin/cibuild
+        git add bin/deploy bin/cibuild
+        git commit -m "Make bin scripts executable" || true
         yes | bin/deploy --verbose ${{ steps.setup.outputs.NO_PUSH }}
                     --src ${{ steps.setup.outputs.SRC_BRANCH }}
                     --deploy ${{ steps.setup.outputs.DEPLOY_BRANCH }} 
