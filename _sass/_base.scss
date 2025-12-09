@@ -537,6 +537,19 @@ html.transition *:after {
   transition-delay: 0 !important;
 }
 
+// Callout box
+.callout {
+  background: var(--global-callout-bg-color);
+  border-left: 4px solid var(--global-callout-border-color);
+  padding: 10px 15px;
+  margin: 15px 0;
+  color: var(--global-text-color);
+
+  a {
+    color: var(--global-theme-color);
+  }
+}
+
 // Timeline
 .timeline {
   position: relative;

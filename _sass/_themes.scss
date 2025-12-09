@@ -14,6 +14,8 @@
   --global-footer-link-color: #{$white-color};
   --global-distill-app-color: #{$grey-color};
   --global-divider-color: rgba(0,0,0,.1);
+  --global-callout-bg-color: #fff3cd;
+  --global-callout-border-color: #ffc107;
 
   .fa-sun {
     display : none;
@@ -37,6 +39,8 @@ html[data-theme='dark'] {
   --global-footer-link-color: #{$black-color};
   --global-distill-app-color: #{$grey-color-light};
   --global-divider-color: #424246;
+  --global-callout-bg-color: #3d3d00;
+  --global-callout-border-color: #ffc107;
 
   .fa-sun {
     padding-left: 10px;

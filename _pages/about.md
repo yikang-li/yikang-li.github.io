@@ -24,6 +24,12 @@ lyk [at] sii.edu.cn<br>
 
 My career spans academia, industry R&D, and venture capital — a unique trajectory that shapes my research philosophy: **data-driven, practice-oriented, and impact-focused**.
 
+**Research Interests:** Multi-modal Fusion, Continual Learning, Event Perception & Forecasting, and Data-driven Systems.
+
+<div class="callout">
+  <b>📢 Recruiting!</b> Looking for self-motivated PhD students, research interns, and engineers to join DELTA Lab. If you are passionate about using AI and data to solve real-world problems, please reach out with your CV. See <a href="/prospective/">Prospective Students</a> for details.
+</div>
+
 **Prior Experience:**
 <div class="timeline">
   <div class="timeline-item">
@@ -51,9 +57,4 @@ My career spans academia, industry R&D, and venture capital — a unique traject
     <div class="timeline-desc">GPA: 92/100, Ranking: 1/18, National Scholarship</div>
   </div>
 </div>
-
-**Research Interests:** Multi-modal Fusion, Continual Learning, Event Perception & Forecasting, and Data-driven Systems.
-
-<i style="color: #e74c3c"><b>*** Recruiting ***</b></i>
-I am actively looking for self-motivated PhD students, research interns, and engineers to join DELTA Lab. If you are passionate about using AI and data to solve real-world problems, please reach out with your CV. See [Prospective Students](/prospective/) for details.
 
