@@ -2,33 +2,58 @@
 layout: about
 title: About
 permalink: /
-description: 
+description:
 
 profile:
   align: right
   image: liyikang_portrait.jpg
-  address:  
+  address:
 
 news: true  # includes a list of news items
-selected_papers: true # includes a list of papers marked as "selected={true}"
+selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-AI Investor @ [IDG Capital](https://en.idgcapital.com/).<br>
-Level 41, Jing An Kerry Centre, Jingan District, Shanghai, China<br>
-allen.li.thu [at] gmail.com<br>
-[Google scholar](https://scholar.google.co.uk/citations?user=G9b6hpYAAAAJ) | [Github](https://github.com/yikang-li) || [LinkedIn](https://www.linkedin.com/in/yikang-li) || [Resume](assets/files/resume.pdf)  | [中文简历 (deprecated)](assets/files/resume-zh_CN.pdf)
+Associate Professor (Tenure-track) @ [SII](http://www.sii.edu.cn/) (上海创智学院)<br>
+Quantitative Researcher & Partner @ [FFT Investment](https://fft.fund)<br>
+Room 611, 699 Huafa Road, Xuhui District, Shanghai<br>
+lyk [at] sii.edu.cn<br>
+[Google Scholar](https://scholar.google.co.uk/citations?user=G9b6hpYAAAAJ) | [GitHub](https://github.com/yikang-li) | [LinkedIn](https://www.linkedin.com/in/yikang-li) | [Resume](assets/files/resume.pdf)
 
-*I am currently embracing an exhilarating journey as an AI Investor at IDG Capital, where since August 2022, I have been nurturing advancements in domains like Generative AI, Autonomous Driving, Robotics, Large Language Models, and their associated supply chains and applications. My primary focus is on fostering innovation and driving the surge of technology to new frontiers.*
+*I bridge the gap between AI research and real-world impact.* Currently, I lead DELTA Lab at Shanghai Innovation Institute, focusing on **collective intelligence** and **AI-powered event perception & forecasting systems**. In parallel, I serve as a Partner at FFT Investment, where I lead AI and data teams to improve global asset valuation using advanced ML models.
 
-Prior to my current role, I was the Founder of [ADLab](https://pjlab-adg.github.io/) @ [Shanghai AI Lab](https://www.shlab.org.cn). I built a research team consisting of 40+ talented researchers and interns aiming at revolutionizing the transportation system in a data-driven way.
+My career spans academia, industry R&D, and venture capital — a unique trajectory that shapes my research philosophy: **data-driven, practice-oriented, and impact-focused**.
 
-Before that, I worked as Deputy Director of R&D at [Sensetime Technology Ltd](http://www.sensetime.com/), leading a product team containing over 30 talented engineers and product specialists, developing the RoboX Autonomous Products, including RoboBus & RoboSweeper. 
+**Prior Experience:**
+<div class="timeline">
+  <div class="timeline-item">
+    <div class="timeline-header"><span class="timeline-period">2022 - 2024</span> · <span class="timeline-role">VP in AI</span> · <a href="https://en.idgcapital.com/">IDG Capital</a></div>
+    <div class="timeline-desc">Invested in Embodied AI & LLM: Galaxea AI, Step AI, MiniMax, etc.</div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-header"><span class="timeline-period">2021 - 2023</span> · <span class="timeline-role">Research Scientist & PI</span> · <a href="https://www.shlab.org.cn">Shanghai AI Lab</a></div>
+    <div class="timeline-desc">Founded <a href="https://pjlab-adg.github.io/">ADLab</a> (35+ researchers); #1 on Waymo 3D Detection.</div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-header"><span class="timeline-period">2019 - 2022</span> · <span class="timeline-role">Deputy Director of R&D</span> · <a href="http://www.sensetime.com/">SenseTime</a></div>
+    <div class="timeline-desc">Led L4 autonomous driving product team (40+ members).</div>
+  </div>
+</div>
 
-In May 2020, I acquired my Ph.D. from The Chinese University of Hong Kong under the esteemed guidance of Professors [Xiaogang Wang](http://www.ee.cuhk.edu.hk/~xgwang/) and [Xiaoou Tang](https://www.ie.cuhk.edu.hk/people/xotang.shtml).  I got my bachelor's degrees of Electronic Engineering and Economics in *Tsinghua University* in 2016. During my doctoral years, I garnered invaluable experience working as a research intern at Microsoft Research Asia (MSRA) and Meta Reality Labs (formerly Facebook Reality Labs).
+**Education:**
+<div class="timeline">
+  <div class="timeline-item">
+    <div class="timeline-header"><span class="timeline-period">2016 - 2020</span> · <span class="timeline-role">Ph.D.</span> in CV & ML · <a href="https://mmlab.ie.cuhk.edu.hk/">CUHK-MMLab</a></div>
+    <div class="timeline-desc"><a href="https://cerg1.ugc.edu.hk/hkpfs/index.html">HK PhD Fellowship</a> & <a href="https://www.microsoft.com/en-us/research/academic-program/phd-fellowship/">Microsoft Research PhD Fellowship</a></div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-header"><span class="timeline-period">2011 - 2016</span> · <span class="timeline-role">B.S.</span> in EE & Economics (dual) · <a href="https://www.tsinghua.edu.cn/">Tsinghua</a></div>
+    <div class="timeline-desc">GPA: 92/100, Ranking: 1/18, National Scholarship</div>
+  </div>
+</div>
 
-**Research Interests:** My academic pursuits gravitate towards 3D Scene Reconstruction, 3D Scene Perception, Behaviour & Scene Simulation, and an extensive range of topics related to Autonomous Driving.
+**Research Interests:** Multi-modal Fusion, Continual Learning, Event Perception & Forecasting, and Data-driven Systems.
 
-<i style="color: #2ecc6f"><b>\*\*\*Connect & Collaborate\*\*\*&nbsp;</b></i>  
-I am always eager to foster collaborations and new ventures. If you are passionate about forging your business path or joining a startup in the realms we share interests in, I invite you to reach out. Let's exchange visionary insights over a cup of coffee.
+<i style="color: #e74c3c"><b>*** Recruiting ***</b></i>
+I am actively looking for self-motivated PhD students, research interns, and engineers to join DELTA Lab. If you are passionate about using AI and data to solve real-world problems, please reach out with your CV. See [Prospective Students](/prospective/) for details.
 
