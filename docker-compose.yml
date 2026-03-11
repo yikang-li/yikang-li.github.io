@@ -1,0 +1,9 @@
+# this file uses prebuilt image in dockerhub
+services:
+  jekyll_custom:
+    build: .
+    image: al-folio-local-docker
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/srv/jekyll:delegated
