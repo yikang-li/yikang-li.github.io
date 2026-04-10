@@ -15,16 +15,15 @@ social: true  # includes social icons at the bottom of the page
 ---
 
 Associate Professor (Tenure-track) @ [SII](http://www.sii.edu.cn/) (上海创智学院)<br>
-Quantitative Researcher & Partner @ [FFT Investment](https://fft.fund)<br>
 Room 611, 699 Huafa Road, Xuhui District, Shanghai<br>
 lyk [at] sii.edu.cn<br>
 [Google Scholar](https://scholar.google.co.uk/citations?user=G9b6hpYAAAAJ) | [GitHub](https://github.com/yikang-li) | [LinkedIn](https://www.linkedin.com/in/yikang-li) | [Resume](assets/files/resume.pdf)
 
-*I bridge the gap between AI research and real-world impact.* Currently, I lead DELTA Lab at Shanghai Innovation Institute, focusing on **collective intelligence** and **AI-powered event perception & forecasting systems**. In parallel, I serve as a Partner at FFT Investment, where I lead AI and data teams to improve global asset valuation using advanced ML models.
+*I build systems at the intersection of AI, Data, and real-world domains.* I lead **DELTA Lab** at Shanghai Innovation Institute, where we treat `AI × Data × X` as a research program — the same core discipline (context construction, iterative quality gates, knowledge compounding) applied across finance and science as today's two concrete instances of X. Our methodology is codified in **[PM-DELTA](/blog/2026/introducing-pm-delta/)**, an AI-native multi-project management framework that makes autonomous execution reliable at lab scale.
 
-My career spans academia, industry R&D, and venture capital — a unique trajectory that shapes my research philosophy: **data-driven, practice-oriented, and impact-focused**.
+My career spans academia, industry R&D, venture capital, and applied AI across science and finance — a trajectory that shapes my research philosophy: **data-driven, practice-oriented, and impact-focused**.
 
-**Research Interests:** Multi-modal Fusion, Continual Learning, Event Perception & Forecasting, and Data-driven Systems.
+**Research Interests:** AI Agents, AI × Finance, and Data-driven Systems.
 
 <div class="callout">
   <b>📢 Recruiting!</b> Looking for self-motivated PhD students, research interns, and engineers to join DELTA Lab. If you are passionate about using AI and data to solve real-world problems, please reach out with your CV. See <a href="/prospective/">Prospective Students</a> for details.
@@ -32,6 +31,10 @@ My career spans academia, industry R&D, and venture capital — a unique traject
 
 **Prior Experience:**
 <div class="timeline">
+  <div class="timeline-item">
+    <div class="timeline-header"><span class="timeline-period">2024 - 2026</span> · <span class="timeline-role">Quant Researcher & Partner</span> · <a href="https://fft.fund">FFT Investment</a></div>
+    <div class="timeline-desc">Led AI and data teams applying machine learning to equity pricing.</div>
+  </div>
   <div class="timeline-item">
     <div class="timeline-header"><span class="timeline-period">2022 - 2024</span> · <span class="timeline-role">VP in AI</span> · <a href="https://en.idgcapital.com/">IDG Capital</a></div>
     <div class="timeline-desc">Invested in Embodied AI & LLM: Galaxea AI, Step AI, MiniMax, etc.</div>

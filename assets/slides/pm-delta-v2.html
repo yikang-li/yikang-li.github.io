@@ -1,0 +1,1404 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM-DELTA -- AI-Native Development Infrastructure</title>
+    <meta name="author" content="DELTA Lab">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reset.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/theme/white.css" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ===== Design System: Delta Light v2 (monochrome blue) ===== */
+        :root {
+            --r-background-color: #ffffff;
+            --r-main-color: #3a3f4b;
+            --r-heading-color: #1a1d26;
+            --r-link-color: #3b6cf5;
+            --r-link-color-hover: #2952cc;
+            --r-main-font-size: 26px;
+
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7f8fa;
+            --bg-tertiary: #eef1f6;
+            --text-primary: #1a1d26;
+            --text-secondary: #4a5068;
+            --text-muted: #8890a4;
+
+            --accent-primary: #3b6cf5;
+            --accent-secondary: #32ade6;
+            --accent-gate: #e8614d;
+
+            --card-border-l1: #3b6cf5;
+            --card-border-l2: rgba(59,108,245,0.45);
+            --card-bg-l3: #eff3fe;
+            --card-bg-l4: #f7f8fa;
+            --tint-blue: #eff3fe;
+            --tint-gate: #fef2f0;
+
+            --badge-done-bg: rgba(74,222,128,0.12);
+            --badge-done-fg: #22a85a;
+
+            --gradient-primary: linear-gradient(135deg, #3b6cf5 0%, #5856d6 100%);
+            --gradient-brand: linear-gradient(135deg, #3b6cf5 0%, #32ade6 100%);
+            --gradient-subtle: linear-gradient(135deg, #f7f8fa 0%, #eef1f6 100%);
+            --shadow-sm: 0 1px 3px rgba(26,29,38,0.06);
+            --shadow-md: 0 4px 12px rgba(26,29,38,0.08);
+            --shadow-lg: 0 8px 24px rgba(26,29,38,0.10);
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+        }
+
+        /* ===== Typography ===== */
+        .reveal {
+            font-family: "Inter", "PingFang SC", "Noto Sans SC", "Helvetica Neue", sans-serif;
+            font-size: 26px;
+        }
+        .reveal .slides { text-align: left; }
+        .reveal .slides > section { padding: 24px 48px; }
+        .reveal h1, .reveal h2, .reveal h3 {
+            text-transform: none;
+            font-weight: 700;
+            text-align: center;
+            color: var(--r-heading-color);
+            letter-spacing: -0.01em;
+        }
+        .reveal h1 { font-size: 1.6em; margin-bottom: 0.4em; }
+        .reveal h2 { font-size: 1.15em; margin-bottom: 0.45em; }
+        .reveal h3 {
+            font-size: 0.75em;
+            color: var(--text-secondary);
+            margin-bottom: 0.35em;
+            font-weight: 500;
+        }
+        .reveal p, .reveal li { font-size: 0.68em; line-height: 1.5; color: var(--r-main-color); }
+        .reveal ul { margin-left: 0.5em; }
+        .reveal li { margin-bottom: 0.15em; }
+
+        /* ===== Title Slide ===== */
+        .title-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 1.2rem;
+            margin-top: 1rem;
+        }
+        .title-logos img { height: 44px; }
+        .title-logos img.sii-logo { height: 52px; }
+        .subtitle {
+            font-size: 0.78em;
+            color: var(--accent-primary);
+            text-align: center;
+            font-weight: 500;
+            margin-top: 0.15em;
+        }
+        .title-version {
+            display: inline-block;
+            background: var(--gradient-brand);
+            color: #fff;
+            padding: 0.12rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.48em;
+            font-weight: 600;
+        }
+        .author {
+            font-size: 0.6em;
+            color: var(--text-secondary);
+            margin-top: 0.6em;
+            text-align: center;
+            font-weight: 500;
+        }
+        .affiliation {
+            font-size: 0.5em;
+            color: var(--text-muted);
+            margin-top: 0.2em;
+            text-align: center;
+        }
+
+        /* ===== Cards ===== */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            margin: 0.7rem 0;
+            align-items: stretch;
+        }
+        .card-grid.three-col { grid-template-columns: repeat(3, 1fr); }
+        .card-grid.four-col { grid-template-columns: repeat(4, 1fr); }
+        .card {
+            background: var(--bg-primary);
+            border: 1px solid var(--bg-tertiary);
+            border-left: 3px solid var(--card-border-l2);
+            border-radius: var(--radius-md);
+            padding: 0.8rem 0.9rem;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+            min-height: 4.5rem;
+            justify-content: center;
+        }
+        .card h4 {
+            color: var(--accent-primary);
+            margin: 0 0 0.2rem 0;
+            font-size: 0.68em;
+            font-weight: 600;
+        }
+        .card p {
+            font-size: 0.56em;
+            color: var(--text-secondary);
+            margin: 0;
+            line-height: 1.45;
+        }
+        /* Emphasis: highlighted callout (stronger blue border + tint) */
+        .card.emphasis-1 {
+            border-left: 3px solid var(--card-border-l1);
+            background: var(--card-bg-l3);
+        }
+        /* Default cards: classes emphasis-2/3/4 map to uniform base style */
+        .card.emphasis-2 { border-left-color: var(--card-border-l2); }
+        .card.emphasis-3 { border-left-color: var(--card-border-l2); }
+        .card.emphasis-4 { border-left-color: var(--card-border-l2); }
+        /* Gate: warm accent for warnings/human steps */
+        .card.gate {
+            border-left: 3px solid var(--accent-gate);
+            background: var(--tint-gate);
+        }
+        .card.gate h4 { color: var(--accent-gate); }
+
+        /* ===== Two Column ===== */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            text-align: left;
+            margin: 0.5rem 0;
+        }
+
+        /* ===== Thesis Box ===== */
+        .thesis-box {
+            position: relative;
+            padding: 1rem 1.3rem;
+            margin: 0.8rem auto;
+            max-width: 75%;
+            text-align: center;
+            background: var(--bg-secondary);
+            border-radius: var(--radius-sm);
+        }
+        .thesis-box::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: calc(var(--radius-sm) + 2px);
+            background: var(--gradient-brand);
+            z-index: -1;
+        }
+        .thesis-box p {
+            font-size: 0.68em;
+            font-weight: 500;
+            color: var(--text-primary);
+            line-height: 1.55;
+            margin: 0;
+        }
+        .thesis-box .thesis-label {
+            font-size: 0.55em;
+            color: var(--accent-primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.2em;
+        }
+
+        /* ===== Layer Stack Diagram ===== */
+        .layer-stack {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            margin: 0.6rem auto;
+        }
+        .layer-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius-md);
+            padding: 0.7rem 1.5rem;
+            font-size: 0.62em;
+            font-weight: 600;
+            text-align: center;
+        }
+        .layer-item.l-value {
+            width: 72%;
+            background: var(--gradient-brand);
+            color: #fff;
+            box-shadow: var(--shadow-md);
+        }
+        .layer-item.l-infra {
+            width: 56%;
+            background: var(--tint-blue);
+            color: var(--accent-primary);
+            border: 1.5px solid var(--card-border-l2);
+        }
+        .layer-item.l-tools {
+            width: 42%;
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            border: 1.5px solid var(--bg-tertiary);
+        }
+        .layer-item.l-foundation {
+            width: 32%;
+            background: var(--bg-tertiary);
+            color: var(--text-muted);
+        }
+        .layer-arrow {
+            font-size: 0.9em;
+            color: var(--text-muted);
+            line-height: 1;
+        }
+
+        /* ===== VS Diagram ===== */
+        .vs-diagram {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 0.8rem;
+            margin: 0.5rem 0;
+        }
+        .vs-side {
+            flex: 1;
+            background: var(--bg-primary);
+            border-radius: var(--radius-md);
+            padding: 0.55rem 0.7rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .vs-side.strong { border: 1.5px solid var(--accent-primary); }
+        .vs-side.weak { border: 1.5px solid var(--bg-tertiary); }
+        .vs-side h4 {
+            font-size: 0.65em;
+            margin: 0 0 0.25rem 0;
+            text-align: center;
+            font-weight: 600;
+        }
+        .vs-side.strong h4 { color: var(--accent-primary); }
+        .vs-side.weak h4 { color: var(--text-muted); }
+        .vs-side li { font-size: 0.55em; color: var(--text-secondary); }
+        .vs-label {
+            background: var(--bg-tertiary);
+            border-radius: 50%;
+            width: 32px; height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.58em;
+            color: var(--text-muted);
+            flex-shrink: 0;
+            align-self: center;
+        }
+
+        /* ===== Pipeline ===== */
+        .pipeline {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.2rem;
+            margin: 0.6rem 0;
+            flex-wrap: wrap;
+        }
+        .pipeline-box {
+            background: var(--bg-primary);
+            border: 1.5px solid var(--bg-tertiary);
+            border-radius: var(--radius-sm);
+            padding: 0.45rem 0.7rem;
+            min-width: 65px;
+            text-align: center;
+            font-size: 0.55em;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+        .pipeline-box.active {
+            border-color: var(--accent-primary);
+            background: var(--tint-blue);
+            color: var(--accent-primary);
+        }
+        .pipeline-box.gate-step {
+            border-color: var(--accent-gate);
+            background: var(--tint-gate);
+            color: var(--accent-gate);
+        }
+        .pipeline-arrow { font-size: 0.7em; color: var(--text-muted); }
+
+        /* ===== Chevron Pipeline ===== */
+        .scope-pipeline {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            margin: 0.5rem 0;
+        }
+        .scope-step {
+            background: var(--bg-primary);
+            border: 1.5px solid var(--bg-tertiary);
+            padding: 0.4rem 0.6rem;
+            font-size: 0.52em;
+            text-align: center;
+            min-width: 88px;
+        }
+        .scope-step:first-child { border-radius: var(--radius-sm) 0 0 var(--radius-sm); }
+        .scope-step:last-child { border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+        .scope-step .scope-title { font-weight: 600; color: var(--text-primary); }
+        .scope-step .scope-desc { color: var(--text-muted); font-size: 0.88em; }
+        .scope-step.gate-step {
+            background: var(--tint-gate);
+            border-color: var(--accent-gate);
+        }
+        .scope-step.gate-step .scope-title { color: var(--accent-gate); }
+        .scope-chevron {
+            width: 0; height: 0;
+            border-top: 16px solid transparent;
+            border-bottom: 16px solid transparent;
+            border-left: 10px solid var(--bg-tertiary);
+            flex-shrink: 0;
+        }
+
+        /* ===== Hub-Spoke Diagram ===== */
+        .hub-spoke {
+            position: relative;
+            width: 340px;
+            height: 290px;
+            margin: 0.2rem auto;
+        }
+        .hub-center {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px; height: 100px;
+            border-radius: 50%;
+            background: var(--gradient-brand);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.55em;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            z-index: 2;
+            line-height: 1.3;
+        }
+        .spoke-node {
+            position: absolute;
+            width: 85px;
+            padding: 0.3rem;
+            border-radius: var(--radius-sm);
+            background: var(--bg-primary);
+            border: 1px solid var(--bg-tertiary);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            font-size: 0.48em;
+            z-index: 2;
+        }
+        .spoke-node .spoke-title { font-weight: 600; color: var(--text-primary); }
+        .spoke-node .spoke-detail { color: var(--text-muted); font-size: 0.88em; }
+        .hub-spoke svg {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 1;
+        }
+
+        /* ===== Context Convergence Diagram ===== */
+        .convergence {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 0.4rem;
+            align-items: center;
+            margin: 0.4rem 0;
+        }
+        .convergence-sources {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+        .convergence-source {
+            background: var(--bg-primary);
+            border: 1px solid var(--bg-tertiary);
+            border-left: 3px solid var(--card-border-l2);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 0.35rem 0.6rem;
+            font-size: 0.52em;
+        }
+        .convergence-source .cs-title { font-weight: 600; color: var(--text-primary); }
+        .convergence-source .cs-desc { color: var(--text-muted); font-size: 0.9em; }
+        .convergence-center {
+            width: 120px;
+            padding: 0.7rem 0.5rem;
+            background: var(--gradient-brand);
+            color: #fff;
+            border-radius: var(--radius-md);
+            text-align: center;
+            font-size: 0.6em;
+            font-weight: 700;
+            box-shadow: var(--shadow-md);
+            line-height: 1.35;
+        }
+        .convergence-output {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+        .convergence-result {
+            background: var(--tint-blue);
+            border-radius: var(--radius-sm);
+            padding: 0.35rem 0.6rem;
+            font-size: 0.52em;
+        }
+        .convergence-result .cr-title { font-weight: 600; color: var(--accent-primary); }
+        .convergence-result .cr-desc { color: var(--text-secondary); font-size: 0.9em; }
+
+        /* ===== Ladder ===== */
+        .ladder {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            margin: 0.5rem auto;
+            max-width: 92%;
+        }
+        .ladder-step {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.3rem 0.7rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.54em;
+            background: var(--bg-secondary);
+            border-left: 3px solid var(--bg-tertiary);
+        }
+        .ladder-step.active {
+            background: var(--tint-blue);
+            border-left-color: var(--accent-primary);
+        }
+        .ladder-step.current {
+            background: var(--tint-blue);
+            border-left-color: var(--accent-primary);
+            font-weight: 600;
+            box-shadow: var(--shadow-sm);
+        }
+        .ladder-step.vision {
+            background: var(--bg-secondary);
+            border-left: 3px dashed var(--text-muted);
+            opacity: 0.7;
+        }
+        .ladder-step .step-level {
+            font-weight: 700;
+            min-width: 24px;
+            color: var(--accent-primary);
+        }
+        .ladder-step .step-name {
+            font-weight: 600;
+            min-width: 140px;
+            color: var(--text-primary);
+        }
+        .ladder-step .step-desc { color: var(--text-secondary); }
+        .ladder-step .step-badge {
+            margin-left: auto;
+            padding: 0.08rem 0.4rem;
+            border-radius: 10px;
+            font-size: 0.82em;
+            font-weight: 600;
+        }
+        .badge-done { background: var(--badge-done-bg); color: var(--badge-done-fg); }
+        .badge-progress { background: var(--tint-blue); color: var(--accent-primary); }
+        .badge-vision { background: var(--bg-tertiary); color: var(--text-muted); }
+
+        /* ===== Stat Row ===== */
+        .stat-row {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 0.5rem 0;
+        }
+        .stat-item { text-align: center; }
+        .stat-item .stat-value {
+            font-size: 1.5em;
+            font-weight: 700;
+            background: var(--gradient-brand);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .stat-item .stat-label {
+            font-size: 0.5em;
+            color: var(--text-muted);
+        }
+
+        /* ===== Matrix Table ===== */
+        .matrix-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 0.4rem 0;
+            font-size: 0.55em;
+        }
+        .matrix-table th {
+            background: var(--bg-secondary);
+            padding: 0.35rem 0.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--accent-primary);
+            text-align: left;
+        }
+        .matrix-table td {
+            padding: 0.35rem 0.5rem;
+            border-bottom: 1px solid var(--bg-tertiary);
+            color: var(--text-secondary);
+        }
+        .matrix-table tr:last-child td { border-bottom: none; }
+        .matrix-table td.ours {
+            color: var(--accent-primary);
+            font-weight: 600;
+        }
+
+        /* ===== Flywheel ===== */
+        .flywheel {
+            position: relative;
+            width: 380px;
+            height: 310px;
+            margin: 0.3rem auto;
+        }
+        .flywheel-node {
+            position: absolute;
+            width: 125px;
+            padding: 0.45rem;
+            border-radius: var(--radius-md);
+            background: var(--bg-primary);
+            border: 1.5px solid var(--card-border-l2);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            font-size: 0.54em;
+            z-index: 2;
+        }
+        .flywheel-node .fw-title {
+            font-weight: 700;
+            color: var(--accent-primary);
+        }
+        .flywheel-node .fw-desc {
+            color: var(--text-secondary);
+            font-size: 0.88em;
+            margin-top: 0.1rem;
+        }
+
+        /* ===== Roadmap ===== */
+        .roadmap {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
+            margin: 0.4rem 0;
+        }
+        .roadmap-item {
+            background: var(--bg-primary);
+            border-radius: var(--radius-sm);
+            padding: 0.45rem;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            font-size: 0.55em;
+            border-bottom: 2px solid var(--card-border-l2);
+        }
+        .roadmap-item .rm-letter {
+            font-size: 1.3em;
+            font-weight: 700;
+            background: var(--gradient-brand);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .roadmap-item .rm-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-top: 0.1rem;
+        }
+        .roadmap-item .rm-desc {
+            color: var(--text-muted);
+            font-size: 0.88em;
+        }
+        .roadmap-item.vision {
+            border-bottom-style: dashed;
+            opacity: 0.75;
+        }
+
+        /* ===== Badges & Labels ===== */
+        .badge {
+            display: inline-block;
+            padding: 0.1rem 0.45rem;
+            border-radius: 10px;
+            font-size: 0.52em;
+            font-weight: 600;
+        }
+        .badge-blue { background: var(--tint-blue); color: var(--accent-primary); }
+        .label-current {
+            display: inline-block;
+            padding: 0.08rem 0.35rem;
+            border-radius: 4px;
+            font-size: 0.65em;
+            font-weight: 600;
+            background: var(--tint-blue);
+            color: var(--accent-primary);
+            border: 1px solid var(--card-border-l2);
+        }
+
+        /* ===== Misc Helpers ===== */
+        .text-center { text-align: center; }
+        .gradient-text {
+            background: var(--gradient-brand);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .accent-bar {
+            width: 80%;
+            height: 3px;
+            background: var(--gradient-brand);
+            border-radius: 2px;
+            margin: 1.2rem auto 0;
+        }
+        .reveal .slide-number { font-size: 13px; color: var(--text-muted); }
+
+        /* ===== Pillar Row ===== */
+        .pillar-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
+            margin: 0.4rem 0;
+        }
+        .pillar {
+            text-align: center;
+            padding: 0.55rem 0.4rem;
+            border-radius: var(--radius-sm);
+            background: var(--bg-secondary);
+            font-size: 0.5em;
+        }
+        .pillar .pillar-icon { font-size: 1.4em; margin-bottom: 0.15rem; }
+        .pillar .pillar-title { font-weight: 600; color: var(--text-primary); }
+        .pillar .pillar-desc { color: var(--text-muted); font-size: 0.9em; }
+    </style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ============================== SLIDE 1: Title ============================== -->
+<section>
+    <div class="title-logos">
+        <img src="assets/LabLogoH.png" alt="DELTA Lab">
+        <img src="assets/SIILogo.jpg" alt="SII" class="sii-logo">
+    </div>
+    <h1>PM-DELTA</h1>
+    <p class="subtitle">AI-Native Development Infrastructure</p>
+    <div class="text-center">
+        <span class="title-version">v1.0</span>
+    </div>
+    <p class="author">DELTA Lab</p>
+    <p class="affiliation">Shanghai Innovation Institute &middot; 2026</p>
+</section>
+
+<!-- ============================== SLIDE 2: From Tools to Value ============================== -->
+<section>
+    <h2>From Tools to Value</h2>
+    <div class="two-column" style="margin-top: 0.5rem;">
+        <div>
+            <div class="layer-stack">
+                <div class="layer-item l-value">Value Delivery</div>
+                <div class="layer-arrow">&uarr;</div>
+                <div class="layer-item l-infra">Dev Infrastructure</div>
+                <div class="layer-arrow">&uarr;</div>
+                <div class="layer-item l-tools">Coding Tools</div>
+                <div class="layer-arrow">&uarr;</div>
+                <div class="layer-item l-foundation">Foundation Models</div>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0.5rem; justify-content: center;">
+            <div class="card emphasis-1">
+                <h4>PM-DELTA</h4>
+                <p>Delivers business value, not just developer productivity.</p>
+            </div>
+            <div class="card emphasis-2">
+                <h4>Cursor, Copilot, Devin</h4>
+                <p>Make individual developers faster. Single-task scope.</p>
+            </div>
+            <div class="card emphasis-3">
+                <h4>Claude, GPT, etc.</h4>
+                <p>Provide intelligence. We build ON them.</p>
+            </div>
+        </div>
+    </div>
+    <div class="thesis-box" style="margin-top: 0.6rem;">
+        <p>The gap between <strong>tools</strong> and <strong>value</strong> was bridged by humans. We <em>computationalize</em> this gap.</p>
+    </div>
+    <aside class="notes">
+        LLM companies build intelligence. Cursor/Copilot make individual developers faster. Devin tries to be a developer.
+        PM-DELTA delivers business value -- like an AI-native Palantir. We build ON LLMs, not competing with them.
+    </aside>
+</section>
+
+<!-- ============================== SLIDE 3: Better Practice ============================== -->
+<section>
+    <h2>Better Practice, Not Just Developer</h2>
+    <div class="vs-diagram">
+        <div class="vs-side weak">
+            <h4>AI as Developer</h4>
+            <ul>
+                <li>Writes code in isolation</li>
+                <li>No project awareness</li>
+                <li>Forgets everything per session</li>
+            </ul>
+        </div>
+        <div class="vs-label">vs</div>
+        <div class="vs-side strong">
+            <h4>AI as Project Manager</h4>
+            <ul>
+                <li>Orchestrates scope, context, quality</li>
+                <li>Multi-project coordination</li>
+                <li>Persistent organizational learning</li>
+            </ul>
+        </div>
+    </div>
+    <div class="thesis-box">
+        <div class="thesis-label">Core Insight</div>
+        <p>The hard problem is <strong>context construction</strong>, not code generation.</p>
+    </div>
+    <aside class="notes">
+        The shift: from humans doing everything except coding, to AI handling the full engineering value chain.
+        Context construction -- knowing what to build, why, and how it fits -- is what separates tools from value.
+    </aside>
+</section>
+
+<!-- ============================== SLIDE 4: Worker Layer ============================== -->
+<section>
+    <h2>Worker Layer: Engineering Discipline</h2>
+    <h3>delta-templates define per-project principles, skills, and commands</h3>
+    <div class="two-column" style="margin-top: 0.4rem;">
+        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <div class="card emphasis-1">
+                <h4>Rules as Code</h4>
+                <p>Behavioral directives in .claude/rules/ that AI loads automatically every session.</p>
+            </div>
+            <div class="card emphasis-2">
+                <h4>Skills & Commands</h4>
+                <p>Reusable capabilities: /start-task, /task-done, /code-review, /decompose.</p>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <div class="card emphasis-3">
+                <h4>File-Based State</h4>
+                <p>Git-tracked proposals, inbox state machine, Linear as source of truth for tasks.</p>
+            </div>
+            <div class="card emphasis-4">
+                <h4>Quality Pipeline</h4>
+                <p>Intent &rarr; Demand Review &rarr; Plan &rarr; Plan Review &rarr; Execute &rarr; Code Review. Three gates before code ships.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================== SLIDE 5: Interactive + Autonomous ============================== -->
+<section>
+    <h2>Interactive + Autonomous</h2>
+    <h3>Same SOP, different supervision level</h3>
+    <div class="two-column" style="margin-top: 0.4rem;">
+        <div>
+            <h3 style="text-align: left; color: var(--accent-primary);">Day Mode (Interactive)</h3>
+            <div class="pipeline" style="justify-content: flex-start;">
+                <div class="pipeline-box active">Plan</div>
+                <span class="pipeline-arrow">&rarr;</span>
+                <div class="pipeline-box active">Implement</div>
+                <span class="pipeline-arrow">&rarr;</span>
+                <div class="pipeline-box active">Review</div>
+                <span class="pipeline-arrow">&rarr;</span>
+                <div class="pipeline-box active">Ship</div>
+            </div>
+            <p style="font-size: 0.58em; color: var(--text-secondary); margin-top: 0.3rem;">
+                Human guides each step. Reviews plans before implementation.
+            </p>
+        </div>
+        <div>
+            <h3 style="text-align: left; color: var(--accent-primary);">Night Mode (Nightrun)</h3>
+            <div class="pipeline" style="justify-content: flex-start;">
+                <div class="pipeline-box active">Plan</div>
+                <span class="pipeline-arrow">&rarr;</span>
+                <div class="pipeline-box gate-step">Gate</div>
+                <span class="pipeline-arrow">&rarr;</span>
+                <div class="pipeline-box active">Impl</div>
+                <span class="pipeline-arrow">&rarr;</span>
+                <div class="pipeline-box gate-step">Gate</div>
+                <span class="pipeline-arrow">&rarr;</span>
+                <div class="pipeline-box active">Ship</div>
+            </div>
+            <p style="font-size: 0.58em; color: var(--text-secondary); margin-top: 0.3rem;">
+                Quality gates replace human checkpoints. Fleet of parallel workers.
+            </p>
+        </div>
+    </div>
+    <div class="thesis-box" style="margin-top: 0.6rem; max-width: 85%;">
+        <p>Every workflow improvement benefits <em>both</em> modes. You choose a supervision level, not a tool.</p>
+    </div>
+</section>
+
+<!-- ============================== SLIDE 6: PM Layer ============================== -->
+<section>
+    <h2>PM Layer: Multi-Project Orchestration</h2>
+    <div class="two-column">
+        <div>
+            <div class="hub-spoke">
+                <svg viewBox="0 0 340 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="170" y1="145" x2="170" y2="25" stroke="#eef1f6" stroke-width="1.5"/>
+                    <line x1="170" y1="145" x2="295" y2="60" stroke="#eef1f6" stroke-width="1.5"/>
+                    <line x1="170" y1="145" x2="295" y2="225" stroke="#eef1f6" stroke-width="1.5"/>
+                    <line x1="170" y1="145" x2="170" y2="265" stroke="#eef1f6" stroke-width="1.5"/>
+                    <line x1="170" y1="145" x2="45" y2="225" stroke="#eef1f6" stroke-width="1.5"/>
+                    <line x1="170" y1="145" x2="45" y2="60" stroke="#eef1f6" stroke-width="1.5"/>
+                </svg>
+                <div class="hub-center">PM-DELTA<br>Meta-Repo</div>
+                <div class="spoke-node" style="top: 2px; left: 50%; transform: translateX(-50%);">
+                    <div class="spoke-title">Project A</div>
+                    <div class="spoke-detail">git subtree</div>
+                </div>
+                <div class="spoke-node" style="top: 38px; right: 2px;">
+                    <div class="spoke-title">Project B</div>
+                    <div class="spoke-detail">git subtree</div>
+                </div>
+                <div class="spoke-node" style="bottom: 38px; right: 2px;">
+                    <div class="spoke-title">Shared Infra</div>
+                    <div class="spoke-detail">delta-shared</div>
+                </div>
+                <div class="spoke-node" style="bottom: 2px; left: 50%; transform: translateX(-50%);">
+                    <div class="spoke-title">Templates</div>
+                    <div class="spoke-detail">.templates/</div>
+                </div>
+                <div class="spoke-node" style="bottom: 38px; left: 2px;">
+                    <div class="spoke-title">Portfolio</div>
+                    <div class="spoke-detail">student work</div>
+                </div>
+                <div class="spoke-node" style="top: 38px; left: 2px;">
+                    <div class="spoke-title">Project C</div>
+                    <div class="spoke-detail">local repo</div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="card emphasis-1" style="margin-bottom: 0.4rem;">
+                <h4>Linear + GitHub Integration</h4>
+                <p>Cross-project visibility via unified task tracking and automated PR workflows.</p>
+            </div>
+            <div class="card emphasis-2" style="margin-bottom: 0.4rem;">
+                <h4>Worktree Isolation</h4>
+                <p>Each task gets its own git worktree. Parallel nightrun workers, zero interference.</p>
+            </div>
+            <div class="card emphasis-3">
+                <h4>Team Project Management</h4>
+                <p>Daily/weekly reports aggregate progress across all projects and portfolio students.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================== SLIDE 7a: SOTIF -- The Problem ============================== -->
+<section>
+    <h2>The Autonomy Risk</h2>
+    <h3>As AI autonomy increases, so does the blast radius of mistakes</h3>
+    <div class="two-column" style="margin-top: 0.5rem;">
+        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <div class="card gate">
+                <h4>Over-Trust</h4>
+                <p>AI confidently produces plausible but wrong output. Bugs ship to production. The more autonomous the system, the later mistakes are caught.</p>
+            </div>
+            <div class="card gate">
+                <h4>Under-Trust</h4>
+                <p>Humans review everything "just in case." AI capacity is wasted. The team gains autonomy on paper but not in practice.</p>
+            </div>
+        </div>
+        <div style="display: flex; align-items: center;">
+            <div class="thesis-box" style="max-width: 100%; margin: 0;">
+                <div class="thesis-label">Core Question</div>
+                <p style="font-size: 0.6em;">How do you know which tasks are <strong>safe to automate</strong> and which need human oversight?</p>
+                <p style="font-size: 0.52em; color: var(--text-muted); margin-top: 0.4rem;">Without systematic assessment, you are guessing.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================== SLIDE 7b: SOTIF -- The Solution ============================== -->
+<section>
+    <h2>SOTIF-Inspired Safety Review</h2>
+    <h3>Systematic automation risk assessment, borrowed from automotive safety</h3>
+    <div class="two-column" style="margin-top: 0.4rem;">
+        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <div class="card emphasis-1">
+                <h4>ARIL Scoring</h4>
+                <p>Automation Risk Impact Level per module. Quantifies reliability risk of AI-driven changes.</p>
+            </div>
+            <div class="card emphasis-2">
+                <h4>Fractal Tree Traversal</h4>
+                <p>Bottom-up risk propagation through CLAUDE.md hierarchy. Leaf modules aggregate to root.</p>
+            </div>
+            <div class="card emphasis-3">
+                <h4>Capability-Aware Gating</h4>
+                <p>Match task complexity to current AI capability. Route high-risk tasks to human review.</p>
+            </div>
+        </div>
+        <div>
+            <div class="layer-stack">
+                <div class="layer-item l-value">Root &mdash; Aggregated Risk</div>
+                <div class="layer-arrow">&uarr;</div>
+                <div class="layer-item l-infra">Module &mdash; Local ARIL</div>
+                <div class="layer-arrow">&uarr;</div>
+                <div class="layer-item l-foundation">Leaf &mdash; Source-Level</div>
+            </div>
+            <div class="thesis-box" style="margin-top: 0.6rem; max-width: 100%;">
+                <p style="font-size: 0.58em;">The system evaluates <em>its own</em> automation safety before executing.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================== SLIDE 8a: Context -- The Problem ============================== -->
+<section>
+    <h2>The Context Crisis</h2>
+    <h3>AI starts every session with amnesia</h3>
+    <div class="two-column" style="margin-top: 0.5rem;">
+        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <div class="card gate">
+                <h4>Zero Memory</h4>
+                <p>Each session starts from scratch. Decisions made yesterday are invisible today. The AI re-discovers what it already learned.</p>
+            </div>
+            <div class="card gate">
+                <h4>Knowledge in Heads</h4>
+                <p>Team knowledge lives only in human memory. When someone is unavailable, the knowledge is gone. Unscalable.</p>
+            </div>
+            <div class="card gate">
+                <h4>Inconsistent Workers</h4>
+                <p>Different AI workers get different context depending on who prompted them. Quality varies wildly across sessions.</p>
+            </div>
+        </div>
+        <div style="display: flex; align-items: center;">
+            <div class="thesis-box" style="max-width: 100%; margin: 0;">
+                <div class="thesis-label">The Bottleneck</div>
+                <p style="font-size: 0.6em;">The hard problem of AI-assisted development is <strong>context construction</strong>, not code generation.</p>
+                <p style="font-size: 0.52em; color: var(--text-muted); margin-top: 0.4rem;">Code generation is solved. Knowing <em>what</em> to build, <em>why</em>, and <em>how it fits</em> -- that is the gap.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================== SLIDE 8b: Context -- The Solution ============================== -->
+<section>
+    <h2>Context Is All You Need</h2>
+    <h3>Four sources converge into unified task context</h3>
+    <div class="convergence" style="margin-top: 0.5rem;">
+        <div class="convergence-sources">
+            <div class="convergence-source">
+                <div class="cs-title">Auto-Context</div>
+                <div class="cs-desc">Fractal CLAUDE.md (T1/T2/T3 loading)</div>
+            </div>
+            <div class="convergence-source">
+                <div class="cs-title">Learnt Context</div>
+                <div class="cs-desc">3-tier rules, insights, principles</div>
+            </div>
+            <div class="convergence-source">
+                <div class="cs-title">Bitter Lessons</div>
+                <div class="cs-desc">Anti-pattern capture + retrieval</div>
+            </div>
+            <div class="convergence-source">
+                <div class="cs-title">Cognitions</div>
+                <div class="cs-desc">Session journals + decision memory</div>
+            </div>
+        </div>
+        <div class="convergence-center">
+            Unified<br>Task<br>Context
+        </div>
+        <div class="convergence-output">
+            <div class="convergence-result">
+                <div class="cr-title">Right Context, Right Time</div>
+                <div class="cr-desc">Never too much, never too little</div>
+            </div>
+            <div class="convergence-result">
+                <div class="cr-title">Organizational Memory</div>
+                <div class="cr-desc">System improves through its own work</div>
+            </div>
+            <div class="convergence-result">
+                <div class="cr-title">Cross-Session Coherence</div>
+                <div class="cr-desc">Knowledge persists across time</div>
+            </div>
+        </div>
+    </div>
+    <div class="thesis-box" style="margin-top: 0.5rem;">
+        <p>Every AI worker starts with <strong>the full picture</strong>. No amnesia. No guessing.</p>
+    </div>
+</section>
+
+<!-- ============================== SLIDE 8c: Fractal CLAUDE.md Detail ============================== -->
+<section>
+    <h2>Fractal CLAUDE.md</h2>
+    <h3>The right context at the right time -- never too much, never too little</h3>
+    <div class="two-column" style="margin-top: 0.5rem;">
+        <div>
+            <div style="background: var(--bg-secondary); border-radius: var(--radius-md); padding: 0.8rem 1rem; font-size: 0.58em; line-height: 1.9;">
+                <div><span style="color: var(--accent-primary); font-weight: 700;">CLAUDE.md</span> <span style="background: var(--tint-blue); color: var(--accent-primary); padding: 0.1rem 0.3rem; border-radius: 4px; font-size: 0.85em; font-weight: 600;">T1 auto</span></div>
+                <div style="padding-left: 1.5em;"><span style="color: var(--accent-primary); font-weight: 600;">.claude/rules/</span> <span style="background: var(--tint-blue); color: var(--accent-primary); padding: 0.1rem 0.3rem; border-radius: 4px; font-size: 0.85em; font-weight: 600;">T2 auto</span></div>
+                <div style="padding-left: 3em; color: var(--accent-primary);">conventions.md</div>
+                <div style="padding-left: 3em; color: var(--accent-primary);">insights.md</div>
+                <div style="padding-left: 1.5em;"><span style="color: var(--text-muted);">src/auth/CLAUDE.md</span> <span style="background: var(--bg-tertiary); color: var(--text-muted); padding: 0.1rem 0.3rem; border-radius: 4px; font-size: 0.85em; font-weight: 600;">T3 demand</span></div>
+                <div style="padding-left: 1.5em; color: var(--text-muted);">src/auth/SPEC.md</div>
+                <div style="padding-left: 1.5em; color: var(--text-muted);">SCOPE.md</div>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0.5rem; justify-content: center;">
+            <div class="card emphasis-1">
+                <h4>T1: Session Start</h4>
+                <p>Root CLAUDE.md auto-loads. Project identity, children map, data flow. Always available.</p>
+            </div>
+            <div class="card emphasis-2">
+                <h4>T2: Module Access</h4>
+                <p>Per-module rules load when touching that module. Conventions, insights, local patterns.</p>
+            </div>
+            <div class="card emphasis-3">
+                <h4>T3: On Demand</h4>
+                <p>Deep docs read explicitly. SPEC.md for architecture rationale. SCOPE.md for strategy.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================== SLIDE 9: Learning System ============================== -->
+<section>
+    <h2>Learning System</h2>
+    <h3>Manual corrections compound into organizational memory</h3>
+    <div class="two-column" style="margin-top: 0.4rem;">
+        <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+            <div class="card emphasis-1">
+                <h4>Tier 1: Local Rules</h4>
+                <p>Per-project behavioral directives. Immediate effect next session. <span class="badge badge-blue">Project scope</span></p>
+            </div>
+            <div class="card emphasis-2">
+                <h4>Tier 2: Project Insights</h4>
+                <p>Cognitive patterns, auto-refined to 1500 chars max. <span class="badge badge-blue">Project scope</span></p>
+            </div>
+            <div class="card emphasis-3">
+                <h4>Tier 3: Team Principles</h4>
+                <p>Cross-project review criteria. Requires human approval. <span class="badge badge-blue">Team-wide</span></p>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0.45rem; justify-content: center;">
+            <div class="card gate">
+                <h4>Bitter Lessons Pipeline</h4>
+                <p>Every code review finding is captured, tagged, and auto-retrieved when the same pattern recurs. Bug fixes trigger root-cause reflection.</p>
+            </div>
+            <div class="thesis-box" style="max-width: 100%; margin: 0;">
+                <div class="thesis-label">Key Insight</div>
+                <p style="font-size: 0.58em;">This is not RLHF. It is explicit, auditable <strong>organizational learning</strong>.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================== SLIDE 10: Three-Layer Emergence ============================== -->
+<section>
+    <h2>Three-Layer Emergence</h2>
+    <h3>Quality emerges from disciplined context construction at three time scales</h3>
+    <div class="two-column" style="margin-top: 0.5rem;">
+        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <div class="card emphasis-1">
+                <h4>Structured Redundancy <span class="badge badge-blue">Minutes</span></h4>
+                <p>Multi-agent planning. Iterative review. Gate-fix retry loops. More compute per task = more reliable output.</p>
+            </div>
+            <div class="card emphasis-2">
+                <h4>Evolutionary Selection <span class="badge badge-blue">Hours</span></h4>
+                <p>Plan + code review select the best approach. Failed attempts inform future decisions.</p>
+            </div>
+            <div class="card emphasis-3">
+                <h4>Compound Learning <span class="badge badge-blue">Weeks</span></h4>
+                <p>Human feedback routed to 3-tier system. The system improves through the work it enables.</p>
+            </div>
+        </div>
+        <div style="display: flex; align-items: center;">
+            <div class="thesis-box" style="max-width: 100%; margin: 0;">
+                <div class="thesis-label">Design Principle</div>
+                <p style="font-size: 0.6em;">Better prompts help one task.<br><br>Better <strong>structure</strong> helps every task, forever.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================== SLIDE 11: Progressive Autonomy ============================== -->
+<section>
+    <h2>Progressive Autonomy</h2>
+    <div class="ladder">
+        <div class="ladder-step">
+            <span class="step-level">L0</span>
+            <span class="step-name">AI-Assisted</span>
+            <span class="step-desc">Human codes, AI autocompletes</span>
+            <span class="step-badge badge-done" style="opacity: 0.5;">Industry</span>
+        </div>
+        <div class="ladder-step active">
+            <span class="step-level">L1</span>
+            <span class="step-name">AI-Driven</span>
+            <span class="step-desc">Human reviews every step, AI codes</span>
+            <span class="step-badge badge-done">Done</span>
+        </div>
+        <div class="ladder-step current">
+            <span class="step-level">L2</span>
+            <span class="step-name">AI-Autonomous</span>
+            <span class="step-desc">Human reviews at gates, AI follows SOP</span>
+            <span class="step-badge badge-done">Done</span>
+        </div>
+        <div class="ladder-step active">
+            <span class="step-level">L3</span>
+            <span class="step-name">AI Fleet</span>
+            <span class="step-desc">Human reviews batches, AI executes queues</span>
+            <span class="step-badge badge-progress">In Progress</span>
+        </div>
+        <div class="ladder-step active">
+            <span class="step-level">L4</span>
+            <span class="step-name">AI Self-Planning</span>
+            <span class="step-desc">Human sets direction, AI decomposes + executes</span>
+            <span class="step-badge badge-progress">Foundation</span>
+        </div>
+        <div class="ladder-step vision">
+            <span class="step-level">L5</span>
+            <span class="step-name">Hypothesis-Driven</span>
+            <span class="step-desc">Human sets hypotheses, AI designs experiments</span>
+            <span class="step-badge badge-vision">Vision</span>
+        </div>
+    </div>
+    <div class="pillar-row" style="margin-top: 0.4rem;">
+        <div class="pillar">
+            <div class="pillar-title">AI Infrastructure</div>
+            <div class="pillar-desc">SOP, gates, nightrun</div>
+        </div>
+        <div class="pillar">
+            <div class="pillar-title">Human Knowledge</div>
+            <div class="pillar-desc">Feedback, corrections</div>
+        </div>
+        <div class="pillar">
+            <div class="pillar-title">Harnessing Eng.</div>
+            <div class="pillar-desc">Conventions, isolation</div>
+        </div>
+        <div class="pillar">
+            <div class="pillar-title">LLM Advances</div>
+            <div class="pillar-desc">Each generation lifts all</div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================== SLIDE 12: Results & Trajectory ============================== -->
+<section>
+    <h2>Results & Trajectory</h2>
+    <div class="stat-row" style="margin-top: 0.4rem;">
+        <div class="stat-item">
+            <div class="stat-value">~50%</div>
+            <div class="stat-label">First-Pass PR Approval</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value">3-5</div>
+            <div class="stat-label">Nightrun Tasks/Week</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value">30 min</div>
+            <div class="stat-label">Review Time/PR</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value">5+</div>
+            <div class="stat-label">Projects Managed</div>
+        </div>
+    </div>
+    <div class="roadmap" style="margin-top: 0.5rem;">
+        <div class="roadmap-item">
+            <div class="rm-letter">A</div>
+            <div class="rm-title">Inner Loop</div>
+            <div class="rm-desc">Q2-Q3 2026</div>
+            <p style="margin-top: 0.15rem;"><span class="label-current">Current</span></p>
+        </div>
+        <div class="roadmap-item">
+            <div class="rm-letter">B</div>
+            <div class="rm-title">Intent + KB</div>
+            <div class="rm-desc">Q3-Q4 2026</div>
+        </div>
+        <div class="roadmap-item vision">
+            <div class="rm-letter">C</div>
+            <div class="rm-title">Predictive</div>
+            <div class="rm-desc">H1 2027</div>
+        </div>
+        <div class="roadmap-item vision">
+            <div class="rm-letter">D</div>
+            <div class="rm-title">Autonomous Research</div>
+            <div class="rm-desc">H2 2027</div>
+        </div>
+    </div>
+    <table class="matrix-table" style="margin-top: 0.4rem;">
+        <tr>
+            <th>Metric</th>
+            <th>Now</th>
+            <th>Phase B</th>
+            <th>Phase D</th>
+        </tr>
+        <tr>
+            <td><strong>PR Approval</strong></td>
+            <td>~50%</td>
+            <td>80%</td>
+            <td class="ours">&gt;95%</td>
+        </tr>
+        <tr>
+            <td><strong>Tasks/Week</strong></td>
+            <td>3-5</td>
+            <td>10-15</td>
+            <td class="ours">30+</td>
+        </tr>
+        <tr>
+            <td><strong>Human Role</strong></td>
+            <td>Code + Plan</td>
+            <td>Outcome Review</td>
+            <td class="ours">Hypothesis</td>
+        </tr>
+    </table>
+</section>
+
+<!-- ============================== SLIDE 13: AI4AI4X ============================== -->
+<section>
+    <h2>AI4AI4X</h2>
+    <h3>Use AI to build AI infra. Use AI infra to transform industries.</h3>
+    <div class="two-column" style="margin-top: 0.5rem;">
+        <div>
+            <div class="layer-stack">
+                <div class="layer-item l-value">Industry Impact</div>
+                <div class="layer-arrow">&uarr;</div>
+                <div class="layer-item l-infra">AI Infrastructure</div>
+                <div class="layer-arrow">&uarr;</div>
+                <div class="layer-item l-foundation">Foundation Models</div>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0.6rem; justify-content: center;">
+            <div class="card emphasis-1">
+                <h4>The Loop</h4>
+                <p>PM-DELTA manages its own development. Every improvement immediately improves the process that builds it.</p>
+            </div>
+            <div class="card emphasis-2">
+                <h4>Deep Cultivation</h4>
+                <p>Value from domain depth, not breadth. AI+Finance, AI+Education -- each domain compounds learning.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================== SLIDE 14: The Flywheel ============================== -->
+<section>
+    <h2>The Flywheel</h2>
+    <div class="two-column">
+        <div>
+            <div class="flywheel">
+                <svg viewBox="0 0 380 310" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;">
+                    <defs>
+                        <marker id="ah" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+                            <polygon points="0 0, 7 2.5, 0 5" fill="#3b6cf5" opacity="0.5"/>
+                        </marker>
+                    </defs>
+                    <path d="M225 45 Q295 50 300 120" stroke="#3b6cf5" stroke-width="1.5" opacity="0.35" marker-end="url(#ah)"/>
+                    <path d="M300 195 Q295 260 225 270" stroke="#3b6cf5" stroke-width="1.5" opacity="0.35" marker-end="url(#ah)"/>
+                    <path d="M155 270 Q85 260 80 195" stroke="#3b6cf5" stroke-width="1.5" opacity="0.35" marker-end="url(#ah)"/>
+                    <path d="M80 120 Q85 50 155 45" stroke="#3b6cf5" stroke-width="1.5" opacity="0.35" marker-end="url(#ah)"/>
+                </svg>
+                <div class="flywheel-node" style="top: 8px; left: 50%; transform: translateX(-50%);">
+                    <div class="fw-title">More Domains</div>
+                    <div class="fw-desc">Wider coverage</div>
+                </div>
+                <div class="flywheel-node" style="top: 50%; right: 0; transform: translateY(-50%);">
+                    <div class="fw-title">Richer Learning</div>
+                    <div class="fw-desc">3-tier compounds</div>
+                </div>
+                <div class="flywheel-node" style="bottom: 8px; left: 50%; transform: translateX(-50%);">
+                    <div class="fw-title">Better Autonomy</div>
+                    <div class="fw-desc">Higher approval rate</div>
+                </div>
+                <div class="flywheel-node" style="top: 50%; left: 0; transform: translateY(-50%);">
+                    <div class="fw-title">More Capacity</div>
+                    <div class="fw-desc">More tasks per night</div>
+                </div>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: column; justify-content: center;">
+            <div class="card emphasis-1" style="margin-bottom: 0.4rem;">
+                <h4>Compound Growth</h4>
+                <p>The system that ran 100 tasks is meaningfully better than the one that ran 10.</p>
+            </div>
+            <div class="card emphasis-3">
+                <h4>AI Cost-Effectiveness Map</h4>
+                <p>Internal framework guides domain selection: which industries benefit most from AI automation today.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================== SLIDE 15: Join Us ============================== -->
+<section>
+    <h2>Join Us</h2>
+    <h3>Building a team of domain-deep AI practitioners</h3>
+    <div class="two-column" style="margin-top: 0.6rem;">
+        <div>
+            <div class="card emphasis-1" style="margin-bottom: 0.6rem;">
+                <h4>AI+X PhD Students</h4>
+                <p>Combine AI methods with domain expertise: finance, education, healthcare, manufacturing.</p>
+            </div>
+            <div class="card emphasis-2">
+                <h4>Full-Time Engineers</h4>
+                <p>Build AI infrastructure that compounds. Shape the future of AI-native development.</p>
+            </div>
+        </div>
+        <div>
+            <div class="card emphasis-3" style="margin-bottom: 0.6rem;">
+                <h4>Research Partners</h4>
+                <p>Cross-institutional collaboration. Real data, real systems, real impact.</p>
+            </div>
+            <div class="thesis-box" style="max-width: 100%; margin: 0;">
+                <div class="thesis-label">Our Mission</div>
+                <p style="font-size: 0.58em;">Not just model builders -- <strong>domain practitioners</strong> who wield AI as infrastructure.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================== SLIDE 16: Call to Action ============================== -->
+<section>
+    <div class="title-logos" style="margin-top: 1.5rem;">
+        <img src="assets/LabLogoH.png" alt="DELTA Lab" style="height: 52px;">
+        <img src="assets/SIILogo.jpg" alt="SII" class="sii-logo" style="height: 60px;">
+    </div>
+    <h1 style="margin-top: 0.8em; font-size: 1.4em;">PM-DELTA</h1>
+    <p style="font-size: 0.72em; color: var(--text-secondary); text-align: center; margin-top: 0.2em;">AI-Native Development Infrastructure</p>
+    <div style="text-align: center; margin-top: 2rem;">
+        <p style="font-size: 0.55em; color: var(--text-muted);">
+            github.com/SII-DELTA
+        </p>
+    </div>
+    <div class="accent-bar" style="margin-top: 1rem;"></div>
+</section>
+
+</div>
+</div>
+
+<!-- Footer logo: OUTSIDE .reveal to avoid transform context issues -->
+<img src="assets/LabLogoH.png" alt="DELTA Lab" class="slide-logo">
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
+<script>
+    Reveal.initialize({
+        hash: true,
+        slideNumber: 'c/t',
+        width: 1280,
+        height: 720,
+        margin: 0.06,
+        transition: 'fade',
+        center: true
+    });
+</script>
+</body>
+</html>

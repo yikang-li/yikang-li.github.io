@@ -8,7 +8,7 @@ middle_name:
 last_name: Li
 email: lyk@sii.edu.cn
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Yikang LI - Associate Professor at Shanghai Innovation Institute, leading DELTA Lab on AI, Data, and Decision Making.
+  Yikang LI - Associate Professor at Shanghai Innovation Institute, leading DELTA Lab on AI x Data x X.
 footer_text: >
   Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
@@ -79,7 +79,7 @@ panelbear_analytics: XXXXXXXXX # panelbear analytics site ID
 # -----------------------------------------------------------------------------
 
 blog_name: Thoughts  # your blog must have a name for it to show up in the nav bar
-blog_description: Ideas on AI, Data, Finance, and Life
+blog_description: Ideas on AI, Data, Science, Finance, and Life
 permalink: /blog/:year/:title/
 
 # Pagination
