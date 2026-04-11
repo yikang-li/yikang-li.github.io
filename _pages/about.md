@@ -19,14 +19,14 @@ Room 611, 699 Huafa Road, Xuhui District, Shanghai<br>
 lyk [at] sii.edu.cn<br>
 [Google Scholar](https://scholar.google.co.uk/citations?user=G9b6hpYAAAAJ) | [GitHub](https://github.com/yikang-li) | [LinkedIn](https://www.linkedin.com/in/yikang-li) | [Resume](assets/files/resume.pdf)
 
-*I build systems at the intersection of AI, Data, and real-world domains.* I lead **DELTA Lab** at Shanghai Innovation Institute, where we treat `AI × Data × X` as a research program — the same core discipline (context construction, iterative quality gates, knowledge compounding) applied across finance and science as today's two concrete instances of X. Our methodology is codified in **[PM-DELTA](/blog/2026/introducing-pm-delta/)**, an AI-native multi-project management framework that makes autonomous execution reliable at lab scale.
+*I build systems at the intersection of AI, Data, and real-world domains.* I lead **DELTA Lab** at Shanghai Innovation Institute, where we pursue a research program I call <strong style="white-space: nowrap;">AI × Data × X</strong> — how to use AI to leverage high-knowledge-density data to enhance specific areas across **finance** and **consulting** today, with **science** as an emerging direction we are actively exploring. **[PM-DELTA](/blog/2026/introducing-pm-delta/)** is one of our current practical explorations — not only a project management tool, but an **AI Workspace** for reliable multi-task autonomous development.
 
-My career spans academia, industry R&D, venture capital, and applied AI across science and finance — a trajectory that shapes my research philosophy: **data-driven, practice-oriented, and impact-focused**.
+My career spans academia, industry R&D, venture capital, and applied AI across finance and consulting — a trajectory that shapes my research philosophy: **data-driven, practice-oriented, and impact-focused**.
 
-**Research Interests:** AI Agents, AI × Finance, and Data-driven Systems.
+**Research Interests:** AI Agents, AI × Finance, AI × Consulting, and Data-driven Systems.
 
 <div class="callout">
-  <b>📢 Recruiting!</b> Looking for self-motivated PhD students, research interns, and engineers to join DELTA Lab. If you are passionate about using AI and data to solve real-world problems, please reach out with your CV. See <a href="/prospective/">Prospective Students</a> for details.
+  <b>📢 Recruiting!</b> Looking for ambitious PhD students, research interns, and engineers to join DELTA Lab — especially those who <b>bring their own ideas</b> and are driven to <b>build something of their own</b>. If you want to use AI and data to tackle real problems and eventually launch your own venture, this is the place. See <a href="/prospective/">Prospective Students</a> for details.
 </div>
 
 **Prior Experience:**

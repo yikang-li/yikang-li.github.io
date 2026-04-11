@@ -2,131 +2,191 @@
 layout: page
 title: Prospective Students
 permalink: /prospective/
-description: Information for prospective PhD students, research interns, and engineers.
+description: For students who want to use AI and data to build something of their own.
 nav: true
 nav_order: 5
 ---
 
-## Join DELTA Lab
+<style>
+.prospective-page h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--global-theme-color);
+  color: var(--global-text-color);
+  font-size: 1.6rem;
+}
+.prospective-page h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--global-text-color);
+  font-size: 1.2rem;
+}
+.prospective-page .lead {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--global-text-color);
+  padding: 1.25rem 1.5rem;
+  background-color: var(--global-code-bg-color);
+  border-left: 4px solid var(--global-theme-color);
+  border-radius: 4px;
+  margin: 1.5rem 0 2rem 0;
+}
+.prospective-page .value-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.prospective-page .value-card {
+  padding: 1.25rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 6px;
+  background-color: var(--global-bg-color);
+}
+.prospective-page .value-card h4 {
+  margin: 0 0 0.5rem 0;
+  color: var(--global-theme-color);
+  font-size: 1.05rem;
+}
+.prospective-page .value-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--global-text-color);
+  opacity: 0.85;
+  line-height: 1.5;
+}
+.prospective-page ul {
+  line-height: 1.8;
+}
+.prospective-page .contact-box {
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+  background-color: var(--global-code-bg-color);
+  border-radius: 6px;
+  text-align: center;
+}
+.prospective-page .contact-box a {
+  color: var(--global-theme-color);
+  font-weight: 600;
+}
+</style>
 
-I am actively recruiting **PhD students**, **research interns**, and **engineers** to join DELTA Lab at Shanghai Innovation Institute. We focus on using AI and data to solve real-world decision-making problems.
+<div class="prospective-page" markdown="1">
 
----
+<div class="lead" markdown="1">
+I am actively recruiting **PhD students**, **research interns**, and **engineers** to join DELTA Lab at Shanghai Innovation Institute. I am especially interested in people who bring their **own ideas** and are driven to **build something of their own** — whether that's a research direction, a product, or a venture.
+</div>
 
-## Research Directions
+## What We Work On
 
-Our lab works on the intersection of **AI, Data, and Decision Making**:
+DELTA Lab pursues a research program called <strong style="white-space: nowrap;">AI × Data × X</strong> — using AI to leverage high-knowledge-density data to enhance specific domains:
 
-- **Collective Intelligence**: Scalable human-in-the-loop data annotation methods to enhance AI capabilities
-- **Event Perception & Forecasting**: AI-powered global event perception and prediction systems
-- **Data-driven Decision Systems**: Applying ML models to improve decision-making in various domains
+<div class="value-grid">
+  <div class="value-card">
+    <h4>AI × Finance</h4>
+    <p>Applying machine learning to equity pricing and decision systems. Active research direction with real-world deployment.</p>
+  </div>
+  <div class="value-card">
+    <h4>AI × Consulting</h4>
+    <p>Turning frontier AI into structured analyst-grade insights. Our first venture <a href="https://sotawise.priordist.com/" target="_blank">SOTAwise</a> is operating in this space.</p>
+  </div>
+  <div class="value-card">
+    <h4>AI × Science (emerging)</h4>
+    <p>Exploring how AI can transform scientific workflows. Under active investigation — ideal for students who want to shape a new direction.</p>
+  </div>
+  <div class="value-card">
+    <h4>AI Workspace</h4>
+    <p><a href="/blog/2026/introducing-pm-delta/">PM-DELTA</a> — the methodology that makes our multi-task autonomous development reliable. Infrastructure-level research.</p>
+  </div>
+</div>
 
----
+## Who I'm Looking For
 
-## What I'm Looking For
+I value **execution ability**, **curiosity**, and **initiative** over traditional metrics.
 
 ### Ideal Candidates
 
-I value **execution ability** and **curiosity** over traditional metrics. The ideal candidate:
-
-- Has strong programming skills (language doesn't matter)
-- Is genuinely curious about data, AI, or decision-making
-- Has hands-on project experience (scale doesn't matter)
-- Is comfortable with "learning by doing"
-- Can work independently while being a good team player
+- **You bring your own ideas.** You're not waiting to be told what to work on.
+- **You build.** You have shipped something — a project, a paper, a product, a startup attempt. Scale doesn't matter; initiative does.
+- **You're comfortable with ambiguity.** Research directions are rarely well-defined when they matter most.
+- **You can work independently.** And you know when to ask for help.
+- **Strong programming skills.** Language doesn't matter; ability to learn does.
 
 ### What Matters Less
 
-- Perfect GPA (though academic foundation helps)
-- Existing publications (nice to have, not required)
-- Specific technical background (we welcome cross-disciplinary candidates)
-
----
+- Perfect GPA (academic foundation helps, but is not decisive)
+- Existing publications (nice, not required)
+- Specific technical background (cross-disciplinary backgrounds are welcome)
 
 ## What You'll Get
 
 ### Training Philosophy
 
-My training philosophy emphasizes **practice over theory**:
-
-- **Real Projects**: Everyone works on real data and real problems
-- **Engineering Skills**: Git, Docker, cloud services, databases - these are fundamentals
-- **Full-stack Data Awareness**: From data collection, cleaning, to analysis
-- **Collaboration**: Code reviews, documentation, teamwork
+My approach emphasizes **practice over theory**. Everyone works on real data and real problems. Everyone learns the full stack — from data collection to model deployment. Everyone writes code that goes into production.
 
 ### Resources
 
 - Adequate computing resources (GPU clusters)
 - Research funding for conferences and collaborations
-- Small team = more personal attention
-- Access to industry connections (VC, startups, tech companies)
+- Small team — more personal attention and direct mentorship
+- Access to industry connections (VCs, startups, tech companies, and our own portfolio)
 
 ### Career Paths
 
-Our alumni pursue diverse careers:
-- Academia (research positions)
-- Industry (AI/ML engineers, data scientists)
-- Startups (founders, early employees)
-- Finance (quant researchers)
-
----
+Our alumni pursue diverse paths — academia, industry ML/AI roles, and **founding their own startups**. If you want to eventually launch your own venture, we will actively help you get there.
 
 ## About Shanghai Innovation Institute
 
-[Shanghai Innovation Institute](http://www.sii.edu.cn/) (上海创智学院) is a unique cross-university collaborative platform. Key features:
-
-- **Multi-school Collaboration**: Students maintain enrollment at their home universities (SJTU, Fudan, ECNU, Westlake, etc.) while receiving joint training
-- **Industry Connection**: Strong ties with industry partners
-- **Flexible Training**: Customized research directions based on student interests
-- **Resource Sharing**: Access to resources across multiple institutions
-
----
+[Shanghai Innovation Institute](http://www.sii.edu.cn/) (上海创智学院) is a cross-university collaborative platform. Students maintain enrollment at their home universities (SJTU, Fudan, ECNU, Westlake, etc.) while receiving joint training. The setup gives you academic rigor plus industry connection plus resource sharing across multiple institutions.
 
 ## How to Apply
 
 ### PhD Students
 
-- Check the admission requirements of your target university (SJTU, Fudan, etc.)
-- Contact me **before** the application deadline with:
-  - Your CV
-  - A brief description of your research interests
-  - Any relevant project/publication links
+Check the admission requirements of your target home university (SJTU, Fudan, etc.), then contact me **before** the application deadline with:
+
+- Your CV
+- A brief description of your research interests (or your own idea)
+- Links to any relevant projects or publications
 
 ### Research Interns
 
-- Minimum 3-month commitment (6+ months preferred)
-- Send me:
-  - Your CV
-  - Available time period
-  - What you hope to learn/achieve
+Minimum 3-month commitment (6+ months preferred). Send me:
+
+- Your CV
+- Your available time period
+- What you hope to learn or build
 
 ### Engineers
 
-- We occasionally hire full-time engineers for data infrastructure and ML systems
-- Check our job postings or send an inquiry
+We occasionally hire full-time engineers for data infrastructure and ML systems. Send an inquiry.
 
----
+<div class="contact-box" markdown="1">
 
-## Contact
+**Email:** [lyk@sii.edu.cn](mailto:lyk@sii.edu.cn)
 
-Email: **lyk [at] sii.edu.cn**
+Please use a clear subject line: `[PhD / Intern / Engineer] Your Name — University`
 
-Please use a clear subject line like: `[Prospective PhD/Intern/Engineer] Your Name - University`
+I try to respond to all serious inquiries.
 
-I try to respond to all serious inquiries, but please understand if responses are delayed during busy periods.
-
----
+</div>
 
 ## FAQ
 
-**Q: Do I need publications to apply?**
-A: No. Hands-on experience and genuine interest matter more than publication count.
+**Do I need publications to apply?**
+No. Hands-on experience and genuine interest matter more.
 
-**Q: What's the typical PhD duration?**
-A: Depends on your home university's policy (typically 4-5 years in China).
+**What's the typical PhD duration?**
+Depends on your home university's policy (typically 4-5 years in China).
 
-**Q: Can international students apply?**
-A: Yes, but you'll need to meet the admission requirements of the partnering Chinese universities.
+**Can international students apply?**
+Yes, but you need to meet the admission requirements of partnering Chinese universities.
 
-**Q: What programming languages should I know?**
-A: Python is most common in our lab, but we care more about your ability to learn than your current stack.
+**What programming languages should I know?**
+Python is most common in our lab. But we care more about your ability to learn than your current stack.
+
+**Can I pursue my own startup idea while in the lab?**
+Yes — this is exactly the kind of energy I want. We will help you think it through and connect you to the right people.
+
+</div>
