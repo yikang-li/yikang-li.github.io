@@ -26,7 +26,7 @@ My career spans academia, industry R&D, venture capital, and applied AI across f
 **Research Interests:** AI Agents, AI × Finance, AI × Consulting, and Data-driven Systems.
 
 <div class="callout">
-  <b>📢 Recruiting!</b> Looking for ambitious PhD students, research interns, and engineers to join DELTA Lab — especially those who <b>bring their own ideas</b> and are driven to <b>build something of their own</b>. If you want to use AI and data to tackle real problems and eventually launch your own venture, this is the place. See <a href="/prospective/">Prospective Students</a> for details.
+  <b>📢 Recruiting!</b> PhD students, research interns, and engineers for DELTA Lab. We offer <b>personalized development plans</b>, <b>AI-native team management</b>, <b>ample compute</b>, <b>funding & venture support</b>, and <b>internship & exchange opportunities</b>. Bring your own ideas — see <a href="/prospective/">Prospective Students</a> for details.
 </div>
 
 **Prior Experience:**

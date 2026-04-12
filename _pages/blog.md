@@ -3,7 +3,6 @@ layout: default
 title: blog
 permalink: /blog/
 description: Ideas on AI, Data, Science, Finance, and Life.
-nav: true
 ---
 
 <style>

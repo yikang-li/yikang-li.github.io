@@ -80,7 +80,7 @@ I am actively recruiting **PhD students**, **research interns**, and **engineers
 
 ## What We Work On
 
-DELTA Lab pursues a research program called <strong style="white-space: nowrap;">AI × Data × X</strong> — using AI to leverage high-knowledge-density data to enhance specific domains:
+DELTA Lab pursues a research program called <strong style="white-space: nowrap;">AI × Data × X</strong> — a three-layer architecture built on a clear research philosophy:
 
 <div class="value-grid">
   <div class="value-card">
@@ -95,9 +95,19 @@ DELTA Lab pursues a research program called <strong style="white-space: nowrap;"
     <h4>AI × Science (emerging)</h4>
     <p>Exploring how AI can transform scientific workflows. Under active investigation — ideal for students who want to shape a new direction.</p>
   </div>
-  <div class="value-card">
+</div>
+
+<div class="value-grid">
+  <div class="value-card" style="background-color: var(--global-code-bg-color);">
     <h4>AI Workspace</h4>
-    <p><a href="/blog/2026/introducing-pm-delta/">PM-DELTA</a> — the methodology that makes our multi-task autonomous development reliable. Infrastructure-level research.</p>
+    <p><a href="/blog/2026/introducing-pm-delta/">PM-DELTA</a> — our AI-native team management system that makes multi-task autonomous development reliable. Everyone uses it; everyone co-iterates on it. Infrastructure-level research that powers everything above.</p>
+  </div>
+</div>
+
+<div class="value-grid">
+  <div class="value-card" style="background-color: var(--global-code-bg-color); border-left: 4px solid var(--global-theme-color);">
+    <h4>Scalability Research</h4>
+    <p>How do you scale up AI capability through <b>computing</b>, <b>data</b>, and <b>engineering practices</b>? This is the foundational layer — our research philosophy. Every domain direction above is an instance of this question, and every tool we build is an answer to it.</p>
   </div>
 </div>
 
@@ -121,16 +131,14 @@ I value **execution ability**, **curiosity**, and **initiative** over traditiona
 
 ## What You'll Get
 
-### Training Philosophy
+My approach emphasizes **practice over theory** — everyone works on real problems with real resources. Here's what you can count on:
 
-My approach emphasizes **practice over theory**. Everyone works on real data and real problems. Everyone learns the full stack — from data collection to model deployment. Everyone writes code that goes into production.
-
-### Resources
-
-- Adequate computing resources (GPU clusters)
-- Research funding for conferences and collaborations
-- Small team — more personal attention and direct mentorship
-- Access to industry connections (VCs, startups, tech companies, and our own portfolio)
+- 🧭 **Personalized Development Plan** — we design your path based on your long-term career goals. You need to think clearly about who you want to be in 5 years — then we build the plan together.
+- 🤖 **AI-Native Team Management** — every member is equipped with Claude Code. We co-iterate on PM-DELTA together. No status reports — delivery context is captured and processed by AI.
+- ⚡ **20,000P+ Compute** — the institute has over 20,000 petaflops of compute resources available. Your experiments run at realistic scale, not toy scale.
+- 💰 **Funding & Venture Support** — for strong ideas, we back student ventures with seed capital, financing support, and introductions to top-tier VCs from our industry network.
+- 🤝 **Team Culture** — equal communication regardless of seniority, shared goal-driven collaboration, and fair distribution. No hierarchy games, no politics.
+- 🌐 **Internship & Exchange Opportunities** — access to industry connections across startups, tech companies, and our own portfolio for internships, collaborations, and career exposure.
 
 ### Career Paths
 
