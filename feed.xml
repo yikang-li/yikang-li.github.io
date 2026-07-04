@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://yikang-li.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://yikang-li.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-07-04T07:28:10+00:00</updated><id>https://yikang-li.github.io/feed.xml</id><title type="html">LI Yikang’s Homepage</title><subtitle>Yikang LI - Associate Professor at Shanghai Innovation Institute, leading DELTA Lab on AI x Data x X.
+</subtitle><entry><title type="html">Fractelier v3.0: Making the Scope the Subject</title><link href="https://yikang-li.github.io/blog/2026/fractelier-release/" rel="alternate" type="text/html" title="Fractelier v3.0: Making the Scope the Subject" /><published>2026-06-23T00:00:00+00:00</published><updated>2026-06-23T00:00:00+00:00</updated><id>https://yikang-li.github.io/blog/2026/fractelier-release</id><content type="html" xml:base="https://yikang-li.github.io/blog/2026/fractelier-release/"><![CDATA[<h2 id="the-bottleneck-moved-and-we-should-follow-it">The bottleneck moved, and we should follow it</h2>
+
+<p>AI coding tools crossed a threshold a while ago. With Claude Code, one person can
+produce more code in a day than a small team used to write in a week. But teams
+are not shipping ten times faster. The bottleneck is no longer model capability –
+it is <strong>context construction</strong>: decomposing work into the right-sized units,
+assembling the exact context each unit needs, and verifying the output against
+real requirements. AI generates roughly 10x the code volume per day; a human can
+still only review two or three pull requests. Without structure you either
+throttle the AI or skip review. Neither is acceptable.</p>
+
+<p>A year ago I argued this is a research discipline, not a tooling afterthought.
+<a href="">Fractelier</a>
+– the platform we built internally as PM-DELTA – is our standing answer to it.
+The name is <em>fractal + atelier</em>: a fractal workshop where masters and agents
+collaborate. v3.0 is the version where the architecture finally matches the name.</p>
+
+<h2 id="what-changed-in-v30-the-scope-becomes-the-subject">What changed in v3.0: the scope becomes the subject</h2>
+
+<p>In the 2.x line, the subject of the system was the <strong>task</strong> – a Linear issue.
+Everything orbited the task. That was the wrong center of gravity. Code does not
+live in a task tracker; it lives in a tree of directories, each with its own
+purpose, its own history, its own people. So in v3.0 the subject is the <strong>scope</strong>:
+any directory carrying a <code class="language-plaintext highlighter-rouge">CLAUDE.md</code>. Tasks, events, and agents are now things
+that <em>happen on</em> the scope tree, not the other way around.</p>
+
+<p>Three ideas carry the weight.</p>
+
+<p><strong>Fractal scope containers.</strong> Each scope keeps its AI-context at its root and
+collects everything else – proposal, Linear slice, worktree and maintenance
+config, issue and acceptance records – in a <code class="language-plaintext highlighter-rouge">.scope/</code> container drawer. Three
+invariants keep work at any depth from drowning in context: no scope inlines its
+children’s content, every proposal is self-contained, and Linear config never
+inherits across a scope boundary. These are the human-facing analogue of the
+tiered context-loading rules the agents already follow. You can work at a leaf
+without paying for the whole tree.</p>
+
+<p><strong>The Orchestration Map.</strong> Underneath, the autonomous executor used to spread its
+task graph across three stores that quietly drifted apart whenever tasks were
+added at runtime – the classic “writer A updated store X, writer B forgot store
+Y” bug. v3.0 collapses them into one recursive structure that the orchestrator and
+the dashboard both walk. There is no second view to drift to, so that whole class
+of bug has no shape to take. Parallelism is governed by one rule – scopes that
+don’t overlap run concurrently – and “run these in order” simply emerges when
+scopes do overlap. A run is a cursor over a persistent map, so crash recovery
+becomes “open the map, walk the open frontier,” and a sealed unit of work is never
+re-attempted – retry always appends new work.</p>
+
+<p><strong>Knowledge that compounds.</strong> The system keeps what it learns across runs in three
+tiers: bitter lessons (root-cause records of real incidents), insights
+(runtime-emergent patterns that get promoted as they prove out), and conventions
+(stable architectural rules). At the start of every task, the relevant lessons and
+insights are injected into that task’s workspace. Each task begins from the memory
+of every prior failure, not from a blank slate. That is the difference between a
+system that resets each night and one that gets harder to fool over time.</p>
+
+<h2 id="does-it-actually-run">Does it actually run?</h2>
+
+<p>Yes – unattended, every night, through a gated pipeline (plan, develop, review,
+fix, verify) that branches and merges along the work graph and parks results for a
+human morning pass. Over the most recent four-week window it averaged about <strong>259
+tasks completed per week</strong>, with one full week reaching 445. (Full per-week
+numbers will be published alongside the technical report; review-quality and
+cost-per-PR figures need a GitHub-authenticated re-run, so I’m not quoting
+numbers I haven’t measured.) The team wakes up to reviewed, staged pull
+requests, not a pile of raw diffs.</p>
+
+<p>This is the concrete shape of one of the opportunities I keep coming back to: an
+AI-enabled small team, developing through tight human-AI collaboration, can reach
+an unusually high rate of creation in the right domain. Fractelier is the
+infrastructure that lets us actually live in that regime instead of just talking
+about it.</p>
+
+<h2 id="whats-next">What’s next</h2>
+
+<p>The scope-rooted model has more to give: sparse, on-demand worktrees that expand
+only the part of the tree a task touches, a VSCode Project Explorer that reads each
+scope’s own index, and preflight/postflight hooks that harden the existing review
+backend. The codebase stays <code class="language-plaintext highlighter-rouge">pm-bot</code> until the v1 demo is stable; the public name
+is Fractelier from here on.</p>
+
+<p>If you want the architecture in depth, the technical report is here:
+<a href="">Fractelier v3.0 Technical Report</a>.
+Questions and collaboration: <strong>lyk@sii.edu.cn</strong>.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>*– Yikang LI, SII</td>
+      <td>DELTA Lab*</td>
+    </tr>
+  </tbody>
+</table>]]></content><author><name></name></author><category term="research" /><category term="fractelier" /><category term="pm-delta" /><category term="ai" /><category term="agents" /><summary type="html"><![CDATA[AI writes 10x the code a human can review. The fix isn't a faster model -- it's context construction. Fractelier v3.0 makes the code's own structure -- the scope tree -- the subject of the system.]]></summary></entry><entry><title type="html">The High-Density Intelligence Data Race: Why the Next Moat Isn’t Scale</title><link href="https://yikang-li.github.io/blog/2026/high-density-intelligence-data/" rel="alternate" type="text/html" title="The High-Density Intelligence Data Race: Why the Next Moat Isn’t Scale" /><published>2026-04-10T00:00:00+00:00</published><updated>2026-04-10T00:00:00+00:00</updated><id>https://yikang-li.github.io/blog/2026/high-density-intelligence-data</id><content type="html" xml:base="https://yikang-li.github.io/blog/2026/high-density-intelligence-data/"><![CDATA[<h2 id="the-real-scarcity">The Real Scarcity</h2>
+
+<p>The AI race narrative has centered on three resources: GPUs, electricity, and talent. All three will keep growing. The one thing that gets thinner the more you mine it is data – specifically, data produced during the most cognitively demanding moments of human work.</p>
+
+<p>I have been following the LLM industry since 2022, first as a VC investor and now as a researcher at Shanghai Innovation Institute building data-driven systems. What I want to work through in this essay is a single question: what game are the biggest labs actually playing with their data strategies?</p>
+
+<p>These observations are first-principles reasoning from the outside. They are meant to clarify my own thinking, not to claim certainty about any company’s internal motives.</p>
+
+<h2 id="the-formula-intelligence-density">The Formula: Intelligence Density</h2>
+
+<p>I find it useful to decompose AI capability into a rough but workable formula:</p>
+
+<blockquote>
+  <p>AI Capability = Sum(Data x Intelligence Density) x Extraction Ability</p>
+</blockquote>
+
+<p>Three factors. <em>Data volume</em> – the sheer amount a model can see. <em>Intelligence density</em> – how much concentrated human reasoning is embedded in that data. <em>Extraction ability</em> – how efficiently the model converts data into capability (architecture, training recipes, RLHF).</p>
+
+<p>By 2026, extraction ability has converged more than most people realize. Transformer plus post-training is essentially public knowledge. What creates a 10x gap is the summation term – data volume multiplied by intelligence density. Volume is running out. What remains decisive is density.</p>
+
+<blockquote>
+  <p>A million low-density clickstreams cannot replace ten thousand high-density decision traces.</p>
+</blockquote>
+
+<div style="text-align: center; margin: 2em 0;">
+  <img src="/assets/img/data-strategy-big-labs/01-formula.png" alt="Intelligence density formula" style="max-width: 100%;" />
+  <p><em>Figure from the original Chinese version.</em></p>
+</div>
+
+<h2 id="three-stages-of-the-data-race">Three Stages of the Data Race</h2>
+
+<div style="text-align: center; margin: 2em 0;">
+  <img src="/assets/img/data-strategy-big-labs/02-three-stages.png" alt="Three stages of the AI data race" style="max-width: 100%;" />
+  <p><em>Figure from the original Chinese version.</em></p>
+</div>
+
+<p>The AI data supply over the past few years breaks into three stages, each with diminishing returns that force the transition to the next.</p>
+
+<p><strong>Stage 1: Internet data.</strong> The GPT-3 to GPT-4 era. Crawl the web, read every book, scrape all of GitHub. Enormous breadth, low density. This dividend was largely exhausted by 2024 – the stock of high-quality human-generated text on the open internet is finite.</p>
+
+<p><strong>Stage 2: AI-assisted human work.</strong> The current stage. Give a capable developer Claude Code, Cursor, or Codex. Every thought process, trade-off, revision, and acceptance decision they make while using the tool becomes a high-density sample of “how humans think through real problems.” The data density of this stage is one to two orders of magnitude higher than Stage 1.</p>
+
+<p><strong>Stage 3: AI observes time and distills experience.</strong> Still future-tense. Models follow real-world processes, autonomously summarize what works and what does not. The “world model” research direction is moving toward this.</p>
+
+<p>The competition today is a fight for Stage 2 dominance. Labs are not competing for user hours – they are competing for the most cognitively expensive hours of the smartest users.</p>
+
+<h2 id="how-anthropic-and-openai-diverge">How Anthropic and OpenAI Diverge</h2>
+
+<p>Once you see the Stage 2 logic, Anthropic’s recent moves become coherent.</p>
+
+<p><strong>Subscriptions as data-for-discount.</strong> Claude Max at $200/month gives heavy users API-equivalent value worth thousands of dollars. One developer reported consuming roughly 10 billion tokens over eight months on Max – equivalent to approximately $15,000 in API costs, for $800 in subscription fees. The common explanation is that Anthropic is subsidizing growth. A more precise reading: under Anthropic’s default policy, subscription user data may be used for model improvement; API user data may not. The price gap is what Anthropic is willing to pay for your data. The more valuable your data, the deeper the discount.</p>
+
+<p><strong>Filtering for density.</strong> In April 2026, Anthropic blocked third-party tools like OpenClaw from accessing Claude through subscription OAuth. OpenClaw is not a coding assistant – it is a self-hosted gateway connecting Claude to WhatsApp, Slack, Telegram, and dozens of other messaging surfaces. The tasks flowing through it are simple, repetitive, and low-density. Under the data-for-discount framework, the logic is clear: the subscription discount exists because high-density developer workflows generate training value. OpenClaw routed low-density tasks through a channel designed for high-density data. The discount no longer made sense.</p>
+
+<p>OpenAI read the same logic. In March 2026, they released an official Codex plugin that runs <em>inside</em> Claude Code – a pragmatic move. Claude Code already occupies the most valuable coding workflow. Rather than competing for the entrypoint, OpenAI embedded itself within it. The plugin provides code review (a second perspective on Claude’s output), adversarial review (challenging design decisions), and task handoff (rescuing tasks Claude gets stuck on). For developers, it is utility. For OpenAI, it is data – Claude’s code, Claude’s blind spots, and Claude’s failure modes all flow to OpenAI’s side.</p>
+
+<p>The second-order effect is notable: developers who can productively use both Claude Code and the Codex plugin are a self-selected group whose interaction density far exceeds the average web user. Both Anthropic and OpenAI are mining the same vein – the judgment of the world’s best developers on real engineering problems.</p>
+
+<h2 id="the-hidden-filter-why-most-labs-stall-at-stage-2">The Hidden Filter: Why Most Labs Stall at Stage 2</h2>
+
+<p>Not every lab can run this playbook. The data-for-discount model requires two things: a product that occupies high-density workflows, and the scale to absorb the subsidy cost.</p>
+
+<p>Labs without both are stuck in a synthetic data loop. They train on outputs from frontier models – a form of distillation that is efficient and cheap, but whose ceiling is capped by the distillation source. This is not a criticism; it is a rational response to constraints. When the cost of subsidizing your own users exceeds the training value of their data, buying distilled data from frontier model outputs is the better economic choice.</p>
+
+<p>But from an industry perspective, the consequence is structural: labs in this position are locked into a chase-and-distill trajectory. Their capability ceiling is determined by the labs they distill from, and they generate little unique high-density data of their own.</p>
+
+<p>The distinction that matters long-term is not who distills and who does not – in a world where models train on text that already contains traces of other models, the boundary is blurry. The question is:</p>
+
+<blockquote>
+  <p>Beyond other people’s data, do you have a source of new data that only you can produce?</p>
+</blockquote>
+
+<p>That is the line between long-term leaders and perpetual chasers.</p>
+
+<h2 id="the-value-loop-and-what-comes-next">The Value Loop and What Comes Next</h2>
+
+<div style="text-align: center; margin: 2em 0;">
+  <img src="/assets/img/data-strategy-big-labs/03-value-loop.png" alt="The high-value scenario loop" style="max-width: 100%;" />
+  <p><em>Figure from the original Chinese version.</em></p>
+</div>
+
+<p>If distillation is not a long-term strategy and user subsidies do not pencil out, what does? The path I keep returning to is building closed loops around high-value scenarios:</p>
+
+<blockquote>
+  <p>High-value data → high-capability model → high-value scenarios → higher-value data</p>
+</blockquote>
+
+<p>Every arrow in this loop costs real resources. You need domain experts willing to invest their most cognitively demanding hours. You need models that are not just benchmark-competitive but demonstrably more reliable than any single expert in a specific domain. You need product forms that generate high-density feedback natively, not through post-hoc labeling.</p>
+
+<p>The moat is not any single dataset. It is the flywheel – better models produce better annotation tools, which produce richer data, which produce better models. The compounding is the defense.</p>
+
+<p>Recent developments suggest the frontier labs are already moving this direction. Anthropic’s Mythos Preview, delivered exclusively to a closed network of infrastructure partners rather than the public API, signals a potential shift from selling tokens to selling capability directly. When the strongest models stop being publicly accessible, the distillation path closes, and the only viable strategy is building your own data loop.</p>
+
+<p>The next few years will not be decided by who has the highest benchmark scores. They will be decided by who reaches deepest into the most valuable human decision-making processes – and who builds the tightest loop between those processes and their models.</p>
+
+<hr />
+
+<p><em>This essay is adapted from a <a href="https://mp.weixin.qq.com/">Chinese-language article</a> originally published on WeChat. Some examples and framing have been adjusted for an international audience.</em></p>]]></content><author><name></name></author><category term="research" /><category term="ai" /><category term="data" /><category term="research" /><summary type="html"><![CDATA[GPUs, electricity, and talent will keep growing. The only resource getting thinner is high-intelligence-density human data -- and the biggest labs know it.]]></summary></entry><entry><title type="html">Introducing PM-DELTA: Context Construction as a Research Discipline</title><link href="https://yikang-li.github.io/blog/2026/introducing-pm-delta/" rel="alternate" type="text/html" title="Introducing PM-DELTA: Context Construction as a Research Discipline" /><published>2026-04-10T00:00:00+00:00</published><updated>2026-04-10T00:00:00+00:00</updated><id>https://yikang-li.github.io/blog/2026/introducing-pm-delta</id><content type="html" xml:base="https://yikang-li.github.io/blog/2026/introducing-pm-delta/"><![CDATA[<h2 id="the-context-problem">The Context Problem</h2>
+
+<p>AI coding tools have crossed a threshold. A single developer with Claude Code or Codex can produce more code in a day than a small team could write in a week. But production teams are not shipping ten times faster. Why?</p>
+
+<p>The bottleneck is not model capability. It is <em>context construction</em> – the work of decomposing a task into the right-sized units, assembling the relevant information each unit needs, and verifying the output meets real requirements. Software engineering has always been context construction: specs, docs, tests, and reviews exist to build shared understanding among collaborators. AI needs a different kind of context – targeted, decomposed, and machine-verifiable.</p>
+
+<p>Here is the core tension: AI produces 10x code volume per day, but humans can review 2-3 pull requests. Without structure, teams either throttle AI output (wasting capacity) or skip review (importing risk). Neither is acceptable.</p>
+
+<h2 id="what-pm-delta-is">What PM-DELTA Is</h2>
+
+<p><a href="https://github.com/SII-DELTA/PM-DELTA">PM-DELTA</a> is an AI-native multi-project management framework built on three open tools: <a href="https://linear.app">Linear</a> (task tracking), GitHub (code hosting), and <a href="https://docs.anthropic.com/en/docs/claude-code">Claude Code</a> (AI development).</p>
+
+<p>The workflow is straightforward:</p>
+
+<ol>
+  <li><strong>Inbox</strong> – Drop meeting notes, research findings, or bug reports into the inbox. AI classifies intent, deduplicates against existing issues, and creates structured Linear issues with dependencies.</li>
+  <li><strong>Planning</strong> – Each task gets a targeted context package: relevant code, design constraints, acceptance criteria. A demand review validates <em>why</em> before design begins. Plan review validates <em>how</em> before implementation starts.</li>
+  <li><strong>Nightrun</strong> – Queued tasks are executed autonomously overnight through a 5-phase quality pipeline (plan, develop, review, fix, verify). Each phase has explicit gates. The team wakes up to reviewed pull requests, not raw code dumps.</li>
+  <li><strong>Review</strong> – Morning review surfaces what was built, what failed, and what needs human judgment. The system separates “ready to merge” from “needs discussion.”</li>
+</ol>
+
+<p>One workspace manages multiple projects. Role-based access (PI, PM, Student) ensures the right people see the right things.</p>
+
+<h3 id="how-pm-delta-differs">How PM-DELTA Differs</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dimension</th>
+      <th>Cursor / Copilot</th>
+      <th>Devin / Codegen agents</th>
+      <th>PM-DELTA</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Scope</td>
+      <td>Single file</td>
+      <td>Single task</td>
+      <td>Multi-project, multi-task</td>
+    </tr>
+    <tr>
+      <td>Memory</td>
+      <td>None</td>
+      <td>Per-task</td>
+      <td>Persistent 3-tier learning</td>
+    </tr>
+    <tr>
+      <td>Quality</td>
+      <td>Human reviews all</td>
+      <td>AI self-reviews</td>
+      <td>Structured gates</td>
+    </tr>
+    <tr>
+      <td>Overnight</td>
+      <td>N/A</td>
+      <td>Single agent</td>
+      <td>Nightrun fleet, 5-phase pipeline</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="three-mechanisms-for-emergent-quality">Three Mechanisms for Emergent Quality</h2>
+
+<p>PM-DELTA does not try to make AI “smarter.” Instead, quality emerges from three mechanisms operating at different time scales:</p>
+
+<p><strong>Structured Redundancy</strong> (minutes). More compute per task yields more reliable output. Multi-agent planning generates and critiques approaches. Iterative review catches issues that single-pass generation misses. Gate-fix retry loops address failures before any human sees the code.</p>
+
+<p><strong>Evolutionary Selection</strong> (hours). Plan review and code review act as selection filters. Bad approaches are identified and discarded <em>before</em> they reach human reviewers. Failed approaches inform future decisions through explicit feedback capture. Over the course of a nightrun batch, the system converges on better solutions through this selective pressure.</p>
+
+<p><strong>Compound Learning</strong> (weeks). Team knowledge is captured in a persistent 3-tier system:</p>
+
+<ul>
+  <li><strong>Rules</strong> – deterministic conventions enforced by code (formatting, naming, file organization)</li>
+  <li><strong>Insights</strong> – accumulated patterns from development experience, refined automatically</li>
+  <li><strong>Principles</strong> – design rationale and architectural decisions, referenced at planning time</li>
+</ul>
+
+<p>This knowledge is retrieved at decision points, not just stored. Every session benefits from what previous sessions learned.</p>
+
+<h2 id="the-autonomy-ladder">The Autonomy Ladder</h2>
+
+<p>PM-DELTA provides a progressive autonomy model. Each level is independently useful – teams adopt bottom-up at their own pace:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Level</th>
+      <th>Mode</th>
+      <th>What It Means</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>L0</td>
+      <td>AI-Assisted</td>
+      <td>Industry baseline (autocomplete, chat)</td>
+    </tr>
+    <tr>
+      <td>L1</td>
+      <td>AI-Driven, Human-Reviewed</td>
+      <td>Interactive development with structured review</td>
+    </tr>
+    <tr>
+      <td>L2</td>
+      <td>AI-Autonomous with Gates</td>
+      <td><strong>Nightrun: autonomous execution with quality gates</strong></td>
+    </tr>
+    <tr>
+      <td>L3</td>
+      <td>AI Fleet Execution</td>
+      <td>Parallel multi-task execution with coordination</td>
+    </tr>
+    <tr>
+      <td>L4</td>
+      <td>AI Self-Planning</td>
+      <td>PM agent decomposes and schedules work</td>
+    </tr>
+    <tr>
+      <td>L5</td>
+      <td>Hypothesis-Driven</td>
+      <td>Continuous knowledge compounding</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Today, L2 is fully operational in our lab. L3 is in active development. The key insight is that each level builds on the previous one – you do not need L5 to get value from L2.</p>
+
+<h2 id="the-self-improving-flywheel">The Self-Improving Flywheel</h2>
+
+<p>Here is what makes PM-DELTA different from a static tool: development friction feeds back as improvements to the framework itself.</p>
+
+<p>When a nightrun task fails because the plan was underspecified, that failure becomes a new plan-review principle. When a code review catches a recurring pattern, it becomes a rule. When a team discovers a better way to structure context for a specific type of task, it becomes an insight.</p>
+
+<p>The more projects use PM-DELTA, the better it gets. Each project’s development experience – its failures, fixes, and discoveries – enriches the shared knowledge base. This is not aspirational; it is how we have been developing PM-DELTA itself for the past year.</p>
+
+<h2 id="try-it">Try It</h2>
+
+<p>PM-DELTA is currently in private beta. We are looking for research labs and development teams who want to try structured AI-native project management.</p>
+
+<ul>
+  <li><strong>GitHub</strong>: <a href="https://github.com/SII-DELTA/PM-DELTA">SII-DELTA/PM-DELTA</a> – <em>currently in private beta; email lyk@sii.edu.cn for access</em></li>
+  <li><strong>Slides</strong>: <a href="/assets/slides/pm-delta-v2.html">PM-DELTA Overview (reveal.js)</a></li>
+  <li><strong>Video walkthrough</strong>: <em>coming soon</em></li>
+</ul>
+
+<p>If you are interested in adopting PM-DELTA for your team, or if you want to contribute, reach out at lyk@sii.edu.cn.</p>]]></content><author><name></name></author><category term="research" /><category term="pm-delta" /><category term="ai" /><category term="agents" /><summary type="html"><![CDATA[AI writes 10x code per day, but humans can only review 2-3 PRs. The bottleneck isn't model capability -- it's context construction. PM-DELTA is our answer.]]></summary></entry></feed>
